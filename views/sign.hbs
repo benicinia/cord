@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/home_style.css">
+     <link rel="stylesheet" href="/stylesheets/header_style.css">
+</head>
+
+<body style="background-color: transparent;">
+  <div class="flex-container-header">
+        <div class="flex-item-header">
+            <img src="/images/.png" onclick="eEgg_func()" width="100" height="100">
+        </div>
+        <div class="flex-item-header">
+            <h1>LD Internet</h1>
+        </div>
+    </div>
+    <div class="flex-container-background">
+        <div class="flex-container">
+            <div class="flex-item-0">
+                <h1 id="form_header">Wifi login page</h1>
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-item-1">
+                <form action="/logon/signup" method="POST">
+                    <div class="flex-item-login">
+                        <h2>Welcome</h2>
+                    </div>
+
+                    <div class="flex-item">
+                        <input type="text" name="email" id='email' placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="flex-item">
+                        <input type="password" name="password" placeholder="Enter your Password" required>
+                    </div>
+
+                    <div class="flex-item">
+                        <button type="submit">Login</button>
+
+                     <a class="d-block small" href="forgot_password">forgot password?</a> 
+
+                     <a class="d-block small1" href="create_account">sign up!</a>
+
+                     
+
+                    
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

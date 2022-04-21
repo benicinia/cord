@@ -1,0 +1,358 @@
+{{!< usrnv1}}
+<link media="screen" rel="stylesheet" type="text/css" href="../stylesheets/global.css"><link rel="stylesheet" type="text/css" href="../stylesheets/inv.css">
+<script type="text/javascript" src="../javascripts/pp/global.js"></script>
+<link media="print" rel="stylesheet" type="text/css" href="../stylesheets/print.css">
+            <!-- send money content -->
+     <style>.ddpOptionCurrency{
+                                        width: 53px;float: left;
+                                        }</style>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+     
+
+     
+<div class="header" style="margin-top: 1em;"><h2>Your Products</h2></div>
+     
+      
+        <div class="bd-example">
+        <nav>
+          <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+            <a class="nav-link active" id="nav-neww-tab" style="margin-right: 10px!important;"  type="button" role="tab" aria-controls="nav-home" aria-selected="true" href="../user/inventory">Add new</a>
+            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Items</button>
+            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Music</button>
+            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Books</button>
+            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Donations</button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            
+            <p><strong>Add common shelf items into your inventory list.</strong> Also add quantity of each item you have in store so each time you make a successful sale we will be able to update your remaining items to avaid oversales and potential chargeback losses.</p>
+           
+            <nav>
+        
+        <div class="flex-container-form_header q">
+           <h3 class="asd w" style="margin-left: 0.5em; margin-top: 1em; color:#663366;"></h3>
+        </div>
+       
+           
+       <table class="table table-striped table-sm table-bordered " id="dataTable" width="100%" cellspacing="0" >
+
+          <thead>
+         <tr style="background-color: #663366;">
+                        <th><h7 style="color:#ffc107">Prod. ID</h7></th>
+                        <th><h7 style="color:#ffc107">Prod. Img</h7></th>
+                        <th><h7 style="color:#ffc107">Prod .name </h7> </th>
+                        <th><h7 style="color:#ffc107">Quantity</h7></th>
+                        <th><h7 style="color:#ffc107">Type</h7></th>
+                         <th><h7 style="color:#ffc107">Weight</h7></th>
+                        <th><h7 style="color:#ffc107">Dimensions</h7></th>
+                        <th><h7 style="color:#ffc107">Shipping details</h7></th>
+                        <th><h7 style="color:#ffc107">price</h7></th>
+                        <th><h7 style="color:#ffc107">Options</h7></th>
+                        <th><h7 style="color:#ffc107">Button/links</h7></th>
+                        <th><h7 style="color:#ffc107">Add image</h7></th>
+                        
+                    </thead>
+                   
+
+     <tbody > 
+        
+        {{#if inv}}
+        {{#each inv}}
+        <tr>
+            <td>{{this.prd}} </td>
+            <td>{{this.prd}} </td>
+            <td>{{this.pr_nm}}</td>
+            <td>{{this.qunt}}</td>
+            <td>{{this.typ}}</td>
+            <td>{{this.wei}}</td>
+            <td>{{this.dimen}}</td>
+            <td>{{this.shpncst}}</td>
+            <td>{{this.prc}}</td>
+            <td><a href="/{{this.pr_id}}">View</a></td>
+            <td><a href="../cbtn/{{this.prd}}">create</a></td>
+            <td><a href="../mgup/{{this.prd}}">Upload</a></td>
+            
+            
+           
+        </tr>
+       {{/each}}
+        </tbody>
+        
+        {{else}}
+            
+                <p id="none"> No results found :(</p>
+            {{/if}}
+       
+     </table>
+     
+     ,/
+    
+
+</div>
+ 
+
+
+
+
+
+
+
+
+
+   
+  </nav>
+          </div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            
+             <nav>
+               
+               <div class="row g-5">
+               <div class="col-md-5 col-lg-4 order-md-last">
+       
+
+      <aside class="bd-aside sticky-xl-top text-muted align-self-start mb-3 mb-xl-5 px-2">
+  <h2 class="h6 pt-4 pb-3 mb-4 border-bottom">How to's</h2>
+  <nav class="small" id="toc">
+    <ul class="list-unstyled">
+      <li class="my-2">
+        <ul class="list-styled ps-3" id="contents">
+          <li><a class="d-inline-flex align-items-center rounded" href="#typography">How to create downloadble google drive link</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#images">Images</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#tables">Tables</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#figures">Figures</a></li>
+        </ul>
+      </li>
+      <li class="my-2">
+        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#forms-collapse" aria-controls="forms-collapse">Forms</button>
+        <ul class="list-unstyled ps-3 collapse" id="forms-collapse">
+          <li><a class="d-inline-flex align-items-center rounded" href="#overview">Overview</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#disabled-forms">Disabled forms</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#sizing">Sizing</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#input-group">Input group</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#floating-labels">Floating labels</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#validation">Validation</a></li>
+        </ul>
+      </li>
+      <li class="my-2">
+        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#components-collapse" aria-controls="components-collapse">Components</button>
+        <ul class="list-unstyled ps-3 collapse" id="components-collapse">
+          <li><a class="d-inline-flex align-items-center rounded" href="#accordion">Accordion</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#alerts">Alerts</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#badge">Badge</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#breadcrumb">Breadcrumb</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#buttons">Buttons</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#button-group">Button group</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#card">Card</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#carousel">Carousel</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#dropdowns">Dropdowns</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#list-group">List group</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#modal">Modal</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#navs">Navs</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#navbar">Navbar</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#pagination">Pagination</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#popovers">Popovers</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#progress">Progress</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#scrollspy">Scrollspy</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#spinners">Spinners</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#toasts">Toasts</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#tooltips">Tooltips</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</aside>
+ 
+        
+        
+
+      </div>
+        <div class="col-md-7 col-lg-8">
+          
+        <div class="table-responsive" style="overflow-x: hidden;">
+          
+        <div class="bd-example">
+        
+        <div class="tab-content" id="nav-tabContent">
+         
+         
+          
+                <p><strong>Add digital products such as Pdf, audio files e.tc. to your product list.</strong> Use cloud services such as google drive to host your digital goods and creat downloadable links then add them to the downloadlink option.</p>
+            
+             
+        <nav>
+             
+               
+               
+         
+         <div class="table-responsive" style="margin-left: 0em;">
+       <table class="table table-striped table-sm table-bordered " id="dataTable" width="100%" cellspacing="0" >
+
+          <thead>
+         <tr style="background-color: #663366;">
+                        <th><h7 style="color:#ffc107">Prod. ID</h7></th>
+                        <th><h7 style="color:#ffc107">Prod. Img</h7></th>
+                        <th><h7 style="color:#ffc107">Prod .name </h7> </th>
+                    
+                        <th><h7 style="color:#ffc107">Options</h7></th>
+                        <th><h7 style="color:#ffc107">Button/links</h7></th>
+                        <th><h7 style="color:#ffc107">Add image</h7></th>
+                        
+                    </thead>
+                   
+
+     <tbody > 
+        
+        {{#if invm}}
+        {{#each invm}}
+        <tr>
+            <td>{{this.d_id}} </td>
+            <td>{{this.d_mg}} </td>
+            <td>{{this.d_nm}}</td>
+            
+           
+            <td><a href="/{{this.pr_id}}">View</a></td>
+            <td><a href="../cbtn/{{this.prd}}">create</a></td>
+            <td><a href="../uprim/{{this.prd}}">Upload</a></td>
+            
+            
+           
+        </tr>
+       {{/each}}
+        </tbody>
+        
+        {{else}}
+            
+                <p id="none"> No results found :(</p>
+            {{/if}}
+       
+     </table>
+     
+     
+      </div>
+        </nav>
+         
+         
+        </div>
+        </div>
+
+      </div>
+         </div>
+         </div>
+        </nav>
+          </div>
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            
+             <nav>
+        <div class="col-md-7 col-lg-8">
+          
+        <div class="table-responsive" style="overflow-x: hidden;">
+          
+        <div class="bd-example">
+        
+        <div class="tab-content" id="nav-tabContent">
+         
+         
+          
+                <p><strong>is some placeholder content the Contact tab's associated content.</strong> Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+            
+             
+        <nav>
+             <div class="row gy-3">
+               
+            <div class="col-sm-6">
+              <label for="cc-name" class="form-label">Name on card</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+              <small class="text-muted">Full name as displayed on card</small>
+              <div class="invalid-feedback">
+                Name on card is required
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="cc-number" class="form-label">Credit card number</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+              <div class="invalid-feedback">
+                Credit card number is required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Expiration</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+              <div class="invalid-feedback">
+                Expiration date required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+              <div class="invalid-feedback">
+                Security code required
+              </div>
+            </div>
+              <div class="col-md-3">
+              <label for="cc-cvv" class="form-label" id="floatingpassword">PIN</label>
+              <input type="password" class="form-control" id="floatingPassword" placeholder="" required="">
+              
+              <div class="invalid-feedback">
+                Security PIN required
+              </div>
+            
+            </div>
+            
+              
+          </div>
+          <br>
+          <div class="col-md-3">
+           <button class="btn btn-primary btn-md"  type="submit">Continue to checkout</button> 
+       </div>
+        </nav>
+         
+         
+        </div>
+        </div>
+
+      </div>
+         </div>
+        </nav>
+          </div>
+          </div>
+        </div>
+       
+
+      </div>
+    </main>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+
+
+
+  
+  
+  
+    
+   
+          
+          
+          
+         
+          
+          

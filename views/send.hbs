@@ -1,0 +1,90 @@
+{{!< usrnv1}}
+
+            <!-- send money content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+     
+
+     
+
+      <h2 style="margin-left: 0em; margin-top: 1em; ">Send money</h2>
+      
+        <div class="bd-example">
+        <nav>
+          <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">{{this.byphn}}</button>
+            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">{{this.byEml}}</button>
+            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">{{this.bynthr}}</button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <p>{{#if am}}<strong>እባክዎ የሚልኩለትን ደንበኛ  ስልክ ቁጥር ከታች ያስገቡ ደንበኛው ስልካቸውን ካላስመዘገቡ ሌሎቹን የመላኪያ አማራጮች ይሞክሩ፡፡
+
+</strong>{{/if}} Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+            <nav>
+        
+        <div class="flex-container-form_header q">
+           <h3 class="asd w" style="margin-left: 0.5em; margin-top: 1em; ">By phone number</h3>
+        </div>
+       
+           <div class="col-md-4">
+<div class="input-group has-validation x">
+  
+              
+              <input type="text" name="phon" class="form-control is-valid mob" id="phon" aria-describedby="inputGroupPrepend3" placeholder="925627843" required="">
+               {{#if errs}}
+               <div class="invalid-feedback" style="display: block;">
+              {{this.errs}}
+            </div>{{/if}}
+       <button type="button" class="btn btn-primary btn btn-success send">Submit</button>
+   
+  </nav>
+          </div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <p><strong>This is some placeholder content the Contact tab's associated content.</strong> Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+             <nav>
+        <form class="add_customer_form" action="send_funds5" method="post">
+        <div class="flex-container-form_header">
+            <h3 style="margin-left: 0.5em; margin-top: 1em; color:#663366;">By email</h3>
+        </div>
+
+       
+           <div class="col-md-4">
+<div class="input-group has-validation">
+              
+              <input type="text" class="form-control is-valid" id="validationServerUsername" aria-describedby="inputGroupPrepend3" placeholder="email@example.com" required="">
+               <div class="valid-feedback">
+              <br>
+            </div>
+            <button type="button" class="btn btn-primary btn btn-success ">Submit</button>
+            </div>
+          </form>
+        </nav>
+          </div>
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <p><strong>This is some placeholder content the Contact tab's associated content.</strong> Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+            <nav>
+        <form class="add_customer_form" action="send_funds5" method="post">
+        <div class="flex-container-form_header">
+            <h3 style="margin-left: 0.5em; margin-top: 0em; color:#663366;">By user name</h3>
+        </div>
+
+       
+           <div class="col-md-4">
+<div class="input-group has-validation">
+              
+              <input type="text" class="form-control is-valid" id="validationServerUsername" aria-describedby="inputGroupPrepend3" placeholder="user name" required="">
+               
+            <button type="button" class="btn btn-primary btn btn-success ">Submit</button>
+            </div>
+          </form>
+        </nav>
+          </div>
+        </div>
+        </div>
+
+     
+    </main>
+  </div>
+</div>
+<script src="../javascripts/data.js"></script>

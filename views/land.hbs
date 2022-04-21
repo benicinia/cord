@@ -1,0 +1,86 @@
+
+{{!< usrnv1}}
+            <!-- Earnings (Monthly) Card Example -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+     
+
+     
+
+      <h2 style="margin-left: 0em; margin-top: 1em; "></h2>
+      <div class="table-responsive" style="margin-left: 0em;">
+       
+     <form class="add_customer_form" action="../send_funds_actionx" method="POST">
+        <div class="flex-container-form_header">
+            <h1 id="form_header">Transfer Funds</h1>
+        </div>
+
+        <div class="col-md-4">
+            
+            <div class=container>
+                {{# if nm}}
+                <label> 
+                     <label for="validationServerUsername" class="form-label"><h4>To :
+                      {{this.nm}}</h4>
+                    </label>
+                   
+                </label>
+                 {{/if}}
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class=container>
+                {{#if ph}}
+                <label><h4>Phone No : <label id="info_label">{{this.ph}}</h4> </label></label>
+                <input type="hidden" name="bphn" size="24" value={{this.pnh}} required />
+           {{/if}}
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class=container>
+                {{#if payn}}
+                 <label>Amount : <label id="info_label">{{this.payn.amt}} Birr</label></label>
+                 <input type="hidden" name="amount" size="24" value={{this.payn.amt}} required />
+                 <input type="hidden" name="phn" size="24" value={{this.payn.phn}} required />
+                 {{/if}}
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div  class=container>
+                <label>Enter your PIN :</b></label><br>
+                
+                <input class="form-control is-valid" name="pin" size="24" type="password"  required />
+{{# if errp }}
+   <div class="invalid-feedback" style="display: block;" >
+      
+              <h6> {{this.errp}}</h6> 
+              </div>
+                
+             
+            {{/if}} 
+            </div>
+        </div>
+
+
+
+<br>
+        <div class="col-md-4">
+            
+
+            <div class="container">
+                <input class="btn btn-primary" name="submit_val" type="submit" value="submit">
+            </div>
+<div class="container">
+                <a href="#" class="button">Forgot your pin?</a>
+            </div>
+            
+        </div>
+
+    </form>
+      </div>
+    </main>
+  </div>
+</div>
+ 

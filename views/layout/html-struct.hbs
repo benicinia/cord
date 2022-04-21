@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link type="text/css" rel="stylesheet" href="/css/style.css"/>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Dashboard</title>
+  <!-- Bootstrap core CSS-->
+  <link href="stylesheets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="stylesheets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  
+  
+  
+<link href="stylesheets/dashboard.css" rel="stylesheet">
+<link href="stylesheets/headers.css" rel="stylesheet">
+    {{{block "pageStyles"}}}
+  </head>
+
+  <body>
+
+    <!-- Placeholder for page content. -->
+    {{{body}}}
+
+    <!-- Partials are common snippets to be used 1 or more pages. -->
+    {{> scripts}}
+    {{> other}}
+
+    <!-- A block is placeholder for pieces of content defined in a page. -->
+    {{{block 'pageScripts'}}}
+  </body>
+</html>

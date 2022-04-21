@@ -1,0 +1,81 @@
+
+    
+{{# if lng.am}}
+ {{!< usrnv1}}
+ 
+
+ {{# if lng.en}}
+ {{!< usrnv1}}
+ 
+
+ {{# if lng.oro}}
+ {{!< usrnv-oro}}
+ {{/if}}
+
+ {{# if lng.so}}
+ {{!< usrnv-so}}
+ {{/if}} {{/if}}{{/if}}
+ 
+{{# else}}
+     {{!< usrnv1}}       
+    {{/else}} 
+    <style>
+  .mt-5, .my-5 {
+    margin-top: -3rem !important;
+}
+</style>
+<style>.my-5 {
+        margin-left: 15em;
+}</style>
+  <!-- Transactions content -->
+   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"><br><br>
+          <h4 style="margin-left: 0em; margin-top: -1.5em; color:#663366;">Transactions</h4>
+      <div class="table-responsive" style="margin-left: 0em;"></div>
+       <table class="table table-sm table-bordered " id="dataTable" width="100%" cellspacing="0" >
+
+          <thead>
+         <tr class="trhd" >
+                        <th class="sorting_desc"><h7 >Trans. ID</h7></th>
+                        <th><h7 >Trans .date </h7> </th>
+                        <th><h7 >Remarks</h7></th>
+                        <th><h7 >Order details</h7></th>
+                         <th><h7 >Amount</h7></th>
+                        <th><h7 >Withdrawal</h7></th>
+                        <th><h7 >Balance</h7></th>
+                        
+                    </thead>
+                   
+
+     <tbody > 
+        
+        {{#if data}}
+        {{#each data}}
+        <tr>
+            <td>{{this.trans_id}} </td>
+            <td>{{this.trans_date}}</td>
+            <td>{{this.remarks}}</td>
+            <td><a href="/order/{{this.trans_id}}">View</a></td>
+            <td>{{this.debit}}</td>
+            <td>{{this.credit}}</td>
+            <td>{{this.balance}}</td>
+            
+           
+        </tr>
+       {{/each}}
+        </tbody>
+        
+        {{else}}
+            
+                <p id="none"> No results found :(</p>
+            {{/if}}
+       
+     </table>
+     
+     
+      </div>
+       </div>
+</div>
+
+    </main>
+ 
+ 

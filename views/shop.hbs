@@ -1,0 +1,388 @@
+
+    
+
+ {{!< usrnv1}}
+ 
+ <title>Ezpay checkout</title>
+    <script src="../javascripts/jquery/jquery.min.js"></script>
+    <script src="../javascripts/handlebars/handlebars.min.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
+<script src="../javascripts/dat.js"></script>
+    <link href="../stylesheets/features.css" rel="stylesheet">
+<link href="../stylesheets/style2r.css" rel="stylesheet">
+<link href="../stylesheets/demo.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+ <style>.my-5 {
+        margin-left: 15em;
+}
+.col{margin: unset!important;
+padding-top: 2em!important;
+}
+.rr{padding-top: unset!important;}
+.rws{margin: unset!important;
+
+}
+</style>
+{{#if opt}}
+{{#each opt}}
+<style>
+.cb-slideshow li:nth-child({{this.imgur}}) span { background-image: url(../images/6.jpg) }
+.cb-slideshow li:nth-child(2) span {
+    background-image: url(../images/5.jpg);
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    -o-animation-delay: 6s;
+    -ms-animation-delay: 6s;
+    animation-delay: 6s;
+}
+.cb-slideshow li:nth-child(3) span {
+    background-image: url(../images/4.jpg);
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    -ms-animation-delay: 12s;
+    animation-delay: 12s;
+	
+}
+.cb-slideshow li:nth-child(4) span {
+    background-image: url({{this.imgur}});
+    -webkit-animation-delay: 18s;
+    -moz-animation-delay: 18s;
+    -o-animation-delay: 18s;
+    -ms-animation-delay: 18s;
+    animation-delay: 18s;
+}
+.cb-slideshow li:nth-child(5) span {
+    background-image: url({{this.imgur}}));
+    -webkit-animation-delay: 24s;
+    -moz-animation-delay: 24s;
+    -o-animation-delay: 24s;
+    -ms-animation-delay: 24s;
+    animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(6) span {
+    background-image: url({{this.imgur}});
+    -webkit-animation-delay: 30s;
+    -moz-animation-delay: 30s;
+    -o-animation-delay: 30s;
+    -ms-animation-delay: 30s;
+    animation-delay: 30s;
+}
+
+</style>
+{{/each}}{{/if}}
+    <style>
+      body, div, dl, dt, dd, ul, ol,  h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td {
+    margin: auto;
+    padding: 0;
+}
+      .container{
+         margin-bottom: auto!important;
+         margin-top: auto!important;
+      }
+     
+      .my-5 {
+    margin-top: auto!important;
+    margin-bottom: auto!important;
+}
+      .pt-5 {
+    padding-top: 0em!important;
+}
+      .o1 {
+        display: none;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      .form-floating {
+  z-index: 2;}
+  input[type="pin" i] {
+    -webkit-text-security: disc !important;
+    padding: 1px 2px;
+}
+}
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  <!-- Transactions content -->
+   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+     <br><br>
+          <h2 style="margin-left: 0em; margin-top: -1em; ;">Shop</h2>
+      <div class="table-responsive" style="margin-left: 0em;">
+       <table class="table table-hover table-sm " id="dataTable" width="100%" cellspacing="0" >
+
+          <thead>
+         <tr class="trhd">
+                        <th><h7 style="color:#ffc107">Order. ID</h7></th>
+                         <th><h7 style="color:#ffc107">Order. date</h7></th>
+                        <th><h7 style="color:#ffc107">Item name</h7> </th>
+                        <th><h7 style="color:#ffc107">Quantity</h7></th>
+                        <th><h7 style="color:#ffc107">Price</h7></th>
+                         
+                        
+                    </thead>
+                   
+
+     <tbody > 
+        
+        {{#if opt}}
+        {{#each opt}}
+        <tr><div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5" style="
+    flex: 0 0 auto!important;">
+      <div class="col rws">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('../images/nw/33.jpg');
+       
+   
+    height: 30em!important;
+}
+        
+        ">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+             <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold cv">Shoppingo plc <h7><span class="badge rounded-pill bg-primary" style="margin-bottom: 1.5em;vertical-align: -webkit-baseline-middle;padding: .35em .35em!important;font-size: .26em!important;"><svg class="bi" style="vertical-align: -.125em!important;" width="10" height="10"><use xlink:href="#check"><svg id="check" viewBox="0 0 16 16">
+    <title>Check</title>
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+  </svg></use></svg></span></h7></h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://github.com/twbs.png" alt="visit" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>Website</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>Electronics</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+       <div class="col rws">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('../images/nw/13872063_079_5515.jpg');
+       
+   
+    height: 30em!important;
+}
+        
+        ">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+             <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold cv">Shoppingo plc <h7><span class="badge rounded-pill bg-primary" style="margin-bottom: 1.5em;vertical-align: -webkit-baseline-middle;padding: .35em .35em!important;font-size: .26em!important;"><svg class="bi" style="vertical-align: -.125em!important;" width="10" height="10"><use xlink:href="#check"><svg id="check" viewBox="0 0 16 16">
+    <title>Check</title>
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+  </svg></use></svg></span></h7></h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://github.com/twbs.png" alt="visit" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>Website</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>Electronics</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+      
+       
+      
+   <div class="col rws">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('../images/mm.jpg');
+       
+   
+    height: 30em!important;
+}
+        
+        ">
+         <form id="rr" action="http://ezpay.com/securex" method="post">
+<input type="hidden" name="index" value="">
+  <input type="hidden" name="email" value="abenezeramdie@gmail.com">
+  <input type="hidden" name="typ" value="r">
+  <input type="hidden" name="prc" value="25">
+  <input type="hidden" id="n" name="npt" value="3">
+  <input type="hidden" name="item_name" value="hjl">
+  <input type="hidden" name="prd" value="265">
+      <input type="hidden" name="mm" value="5">
+  <input type="hidden" name="Option1" value="1">
+  
+
+    <input type="hidden" name="Option2" value="2">
+  
+
+    <input type="hidden" name="Option3" value="3">
+  
+
+      
+  <input type="hidden" name="currency_code" value="ETB">
+
+<div class="col rr">
+  
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('../images/unsplash-photo-1.jpg');">
+ 
+           
+    
+        <ul class="cb-slideshow" style="margin-bottom: 7em;">
+            <li><span>Image 1</span><div><h6>Option1</h6></div></li>
+            <li><span>Image 2</span><div><h6>Option2</h6></div></li>
+            <li><span>Image 3</span><div><h6>Option3</h6></div></li>
+            
+        </ul>
+        <div class="container" style="margin-top: 9em; ">
+          
+            <!-- Codrops top bar -->
+            <div class="codrops-top">
+                
+                <span class="right">
+                    <a href="#" target="_blank"></a>
+                    <a href="#" target="_blank"></a>
+                    <a href="#">
+                        <strong></strong>
+                    </a>
+                </span>
+                <div class="clr">
+
+         
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">hjl</h2>
+            <ul style="margin-left: -5em;
+    margin-bottom: 2em;background-color: rgba(0,0,0,.8);
+    border-top: 1px solid rgba(0,0,0,.125);width: 33em;padding-left:6em;" class="d-flex list-unstyled mt-auto">
+              
+              <li class="me-auto ">
+                
+
+               
+                <input id="bbtn" style="height: 4em; display: none; margin-left: -4em; border: 1px solid transparent !important;" type="image" name="submit" border="0" src="../images/btn_buynow_LG.png" alt="Buy Now">
+           <input id="bbtnd" style="height: 4em;display: flex;border: 1px solid transparent!important;margin-left: -4em;" type="image" name="submit" border="0" src="../images/btn_buynow_LG.png" alt="Buy Now" disabled=""></li>
+              <li class="d-flex align-items-center me-3">
+                
+                <select id="opts" onchange="update()" style="height: 2em!important;width: 6em;margin-left:0em;color: #fff;background-color:transparent;" name="optd">
+                                    <option style="color: #000;" selected="01" id="qun" value="01">choose</option>
+
+    <option style="color: #000;" value="Option1">Option1 - 25 ETB
+        </option><option style="color: #000;" value="Option2">Option2 - 25 ETB
+        </option><option style="color: #000;" value="Option3">Option3 - 25 ETB
+        
+    
+  </option></select> 
+  
+  <input type="hidden" name="option_index" value="1">
+  
+  
+              </li>
+              
+              <li class="d-flex align-items-center me-3 ">
+              <select id="Option1" classname="2" style="display: none;height: 2em!important;width: 4em;margin-left:0em;color: #fff;background-color:transparent;" class="qunti" name="quantityOption1">
+                                   <option id="indxOption1" style="color: #000;" name="Option1-qn" selected="" value="1">1</option>
+                                   </select>              <select id="Option2" classname="36" style="display: none;height: 2em!important;width: 4em;margin-left:0em;color: #fff;background-color:transparent;" class="qunti" name="quantityOption2">
+                                   <option id="indxOption2" style="color: #000;" name="Option2-qn" selected="" value="1">1</option>
+                                   </select>              <select id="Option3" classname="4" style="display: none;height: 2em!important;width: 4em;margin-left:0em;color: #fff;background-color:transparent;" class="qunti" name="quantityOption3">
+                                   <option id="indxOption3" style="color: #000;" name="Option3-qn" selected="" value="1">1</option>
+                                   </select>
+                                    
+
+              </li>
+              
+              
+              <li class="d-flex align-items-center" style="margin-left: 5em;">
+
+
+
+
+
+                <small style="text-transform: lowercase!important;font-size: 1em!important;margin-left: -5em;">
+                 6d             
+                  </small>
+
+              </li>
+            </ul>
+         
+                  
+                </div>
+                
+            </div><!--/ Codrops top bar -->
+            
+        </div>
+    
+
+          
+       </div>
+      </div>
+</form>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('../images/rr.jpg');
+       
+   
+    height: 30em!important;
+}
+        
+        ">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+             <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold cv">Shoppingo plc <h7><span class="badge rounded-pill bg-primary" style="margin-bottom: 1.5em;vertical-align: -webkit-baseline-middle;padding: .35em .35em!important;font-size: .26em!important;"><svg class="bi" style="vertical-align: -.125em!important;" width="10" height="10"><use xlink:href="#check"><svg id="check" viewBox="0 0 16 16">
+    <title>Check</title>
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+  </svg></use></svg></span></h7></h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://github.com/twbs.png" alt="visit" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>Website</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>Electronics</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div></tr>
+        <tr>
+            <td>{{this.or_id}} </td>
+            <td>{{this.or_date}} </td>
+            <td>{{this.it_name}}</td>
+            <td>{{this.it_quantity}}</td>
+            
+            <td>{{this.it_price}}</td>
+            
+           
+        </tr>
+       {{/each}}
+        </tbody>
+        
+        {{else}}
+            
+                <p id="none"> No results found :(</p>
+            {{/if}}
+       
+     </table>
+     
+     
+      </div>
+       </div>
+</div>
+
+    </main>
+ 
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../javascripts/pp/Designe.js"></script>

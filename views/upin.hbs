@@ -1,0 +1,166 @@
+{{!< usrnv1}}
+
+            <!-- send money content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+     
+<style>
+	.upin :hover{
+		color: #000;
+	}
+	.upin{
+		text-decoration-line: none;
+		cursor: pointer;
+		
+	}a:hover {
+    color: #000;
+}
+</style>
+
+<script>
+	
+	function add() {
+    if ($("#nopt").val()) {
+        
+       $('.upin').click(function (){
+        var nop = $("#nopt").val();
+    var opno = [(nop+++1)]
+    
+    
+        $('.optt').append('<div class="row g-3 r'+opno+'"><div class="col-sm-2"><input type="text"  class="form-control" name="opt-nm-'+opno+'" > </div><div class="col-sm-2"><input type="text"  class="form-control"name="opt-price-'+opno+'"  placeholder="option-price" required=""></div><div class="col-sm-2"><input type="text" name="opt-qn-'+opno+'" class="form-control" id="validationServer01"  placeholder="option-quantity" required=""></div><div class="col-sm-2"><a id="'+opno+'" class="upin ">Remove</a>	</div>	</div>'); 
+        $("#nopt").remove();    
+        $('.optt').append('<input type="hidden" name="nopt" class="form-control" id="nopt" value="'+opno+'" placeholder="" required=""> ')
+    
+    } )
+    }
+	
+}</script>
+     <script src="../javascripts/upin.js"></script>
+
+      <h2 style="margin-left: 0em; margin-top: 1em; ">Update</h2>
+      
+        <div class="bd-example">
+        <nav>
+          <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">By phone #</button>
+            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Email</button>
+            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">By name</button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <p><strong>This is some placeholder content the Contact tab's associated content.</strong> Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+            <nav><div >
+				<form class="row g-3" name="upin" action="../uprim/prim" method="POST">
+        <div class="col-md-4">
+            <label for="validationServer00" class="form-label">Item name</label>
+			{{#if btdt}}
+            <input type="text" name="prnm" class="form-control" id="validationServer01" value="{{this.btdt.pr_nm}}" placeholder="" required="">{{/if}}
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+		  <div class="col-md-2">
+            <label for="validationServer00" class="form-label">Item Id</label>
+			            <input type="hidden" name="nopt" class="form-control" id="nopt" value="{{this.btdt.nopt}}" placeholder="" required="">
+
+            <input type="text" name="prd" class="form-control" id="validationServer01" value="{{this.btdt.prd}}" placeholder="" required="">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div></div>
+		  <div class="row g-3">
+		  <div class="col-sm-2">
+            <label for="validationServer00" class="form-label">Option name</label>
+			</div>
+			<div class="col-sm-2">
+            <label for="validationServer00" class="form-label">Price</label>
+			</div>
+			<div class="col-sm-2">
+            <label for="validationServer00" class="form-label">Quantity</label>
+			</div>
+			
+			</div><div class="optt">
+		  {{#if opt}}
+					{{#each opt}}
+		  <div class="row g-3 r{{this.index}}" >
+		  <div class="col-sm-2">
+            
+
+				
+            <input type="text"  class="form-control" name="opt-nm-{{this.index}}" value="{{this.nm}}" placeholder="" required="">
+			            <input type="hidden"  class="form-control" name="opt-indx-{{this.index}}" value="{{this.index}}" placeholder="" required="">
+
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div><div class="col-sm-2">
+			  
+          
+            <input type="text"  class="form-control"name="opt-price-{{this.index}}" value="{{this.pr}}" placeholder="" required="">
+            
+			<div class="valid-feedback">
+              Looks good!
+            </div></div>
+          <div class="col-sm-2">
+           
+            <input type="text"  class="form-control" name="opt-qn-{{this.index}}" id="validationServer01" value="{{this.qn}}" placeholder="" required="">
+            <div class="valid-feedback">
+              Looks good!
+            </div></div>
+			
+			<div class="col-sm-2">
+				
+			 <a style="display: none;" id="{{this.index}}" value="{{this.index}}"  class="upin ">Remove</a>	</div>	
+		  </div>{{/each}}
+					{{/if}} </div> <br>
+					<div class="row g-3 {{this.index}}" >
+						<div class="col-sm-2">
+					 <input type="submit" class="btn btn-primary btn btn-success send" value="Update">
+					 
+					
+					</div> <div class="col-sm-2">
+				 <a style="display: none;"  class="upin {{this.index}}" onclick=add() >Add another option</a>
+			 	</div></div>
+					 </form>
+					</div>
+        
+       
+           
+        </div>
+
+     
+    </main>
+  </div>
+</div>
+
+
+<script  >
+
+        
+   
+    
+
+        var nopp=$("#nopt").val()
+    
+    
+    for (let index = 1; index <= nopp; index++) {
+        const btd = index;
+        
+    
+
+    $('#'+btd).click(function (){
+		
+         $('.r'+btd).remove()
+       
+   
+
+    
+    
+    
+   
+});
+} 
+
+</script>
+
+

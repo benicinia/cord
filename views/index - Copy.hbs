@@ -1,0 +1,114 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/home_style.css">
+     <link rel="stylesheet" href="/stylesheets/header_style.css">
+      <link rel="stylesheet" href="/stylesheets/navbar_style.css">
+</head>
+
+<body style="background-color: transparent;">
+	<div class="flex-container-header">
+        <div class="flex-item-header">
+            <img src="/images/logo.png" onclick="eEgg_func()" width="100" height="100">
+        </div>
+        <div class="flex-item-header">
+            <h1>Ezpay</h1>
+        </div>
+    </div>
+    <body>
+    <div class="nav-wrapper">
+    <div class="topnav" id="theTopNav">
+        <a href="/home.php">Home</a>
+        <a href="/news.php">News</a>
+        <a href="/contact.php">Contact</a>
+        <a href="#about">About US</a>
+        <a href="/signup">Join us!</a>
+    <a href="javascript:void(0);" class="icon" onclick="respFunc()">&#9776;</a>
+    </div>
+    </div>
+
+<script>
+function respFunc() {
+    var x = document.getElementById("theTopNav");
+    console.log(x);
+
+    if (x.className === "topnav") {
+        x.className += " responsive";
+        return 0;
+    }
+
+    if (x.className === "topnav navbar-fixed") {
+        x.className += " responsive";
+        return 0;
+    }
+
+    if (x.className === "topnav responsive") {
+        x.className = "topnav";
+        return 0;
+    }
+
+    if (x.className === "topnav navbar-fixed responsive" || x.className === "topnav responsive navbar-fixed") {
+        x.className = "topnav navbar-fixed";
+        return 0;
+    }
+}
+
+// Function below is jquery-3 function used for making the navbar sticky
+$(document).ready(function() {
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 120) {
+      $("#theTopNav").addClass('navbar-fixed');
+    }
+    if ($(window).scrollTop() < 121) {
+      $("#theTopNav").removeClass('navbar-fixed');
+  }
+  });
+});
+</script>
+    <div class="flex-container-background">
+        <div class="flex-container">
+            <div class="flex-item-0">
+                <h1 id="form_header">Ezana payment service</h1>
+
+                
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-item-1">
+                <form action="/logon" method="POST">
+                    <div class="flex-item-login">
+                        <h2>Welcome</h2>
+                    </div>
+
+                    <div class="flex-item">
+                        <input type="text" name="email" id='email' placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="flex-item">
+                        <input type="password" name="password" placeholder="Enter your Password" required>
+                    </div>
+
+                    <div class="flex-item">
+                        <button type="submit">Login</button>
+
+                     <a class="d-block small" href="forgot_password">forgot password?</a> 
+
+                     <a class="d-block small1" href="create_account">sign up!</a>
+
+                     
+
+                    
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

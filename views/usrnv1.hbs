@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Ezana payment processing service">
+  <link rel="shortcut icon" href="../images/logo.png">
+  <meta name="author" content="Benicinia">
+  <title>{{this.title}}</title>
+  
+  <link href="../stylesheets/vendor/bootstgrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../stylesheets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <script src="../javascripts/vendor/jquery/jquery.min.js"></script>
+  
+  <script src="../javascripts/upin.js"></script>
+
+<link href="../stylesheets/dashboard.css" rel="stylesheet">
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<link href="../stylesheets/headers.css" rel="stylesheet">
+
+
+ <link href="stylesheets/billing.css" rel="stylesheet">
+</head>
+<body>
+   <style>
+     .ccc{
+       font-size:1.6em!important;
+     }
+   .dtm {
+     float: right!important;
+   }
+   .msgm {
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+.contt{
+  margin-left: -10em!important;
+    max-width: 300px;
+    overflow-x: hidden;
+}
+ </style> 
+ {{#if bz}}
+ 
+ <style>
+   .dwb {
+    color: #0c0c0b!important;
+}
+ </style>
+ {{/if}}
+{{#if com }}
+<style>
+  .w{color: #663366;}
+  .bg-warni{background-color: #ffc107!important;}
+  .bg-dar {
+    background-color: #A94C9C!important;
+}
+  .dwa{color: #000!important;}
+  h7 {color: #ffc107;}
+  h2 {color: #663366;}
+  .trhd {background-color: #663366;}
+    @media (max-width: 400px){
+   .dropdown {
+display: none;
+   }}
+   @media (max-width: 720px){
+   #sidebarMenu{
+    width: max-content;
+   }}
+   @media (max-width: 720px){
+   .navbar-nav{
+display: none !important;
+   }}
+   @media (max-width: 400px){
+   .navbar-toggler {
+display:none;
+   }}
+   .bg-cbe  {
+    background-color: #E5C9E1!important;
+}
+
+   @media (min-width: 992px){
+.col-lg-2 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+} }
+body {
+    font-size: 0.875rem!important;
+}
+@media (min-width: 992px){
+.me-lg-center {
+    margin-right: 0!important;
+}}
+.card {
+    
+    background-color: #E5C9E1!important;
+    background-clip: border-box;
+    border: 1px solid #e3e6f0;
+    border-radius: 0.35rem;
+}
+
+.card-header-ez {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #A94C9C;
+    border-bottom: 1px solid #e3e6f0;
+}
+.border-left-primary {
+    border-left: 0.25rem solid #A94C9C !important;
+}
+.text-primary-cbe {
+    color: #ffc107 !important;
+}
+.text-gray-800 {
+    color: #663366 !important;
+}
+.sidebarcbe .nav-link  {
+    font-weight: 500;
+    color: #663366;
+}
+.navbar-brand {
+  color: #ffd700!important;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem !important;
+    background-color: #663366;
+    box-shadow: inset -1px 0 0 rgb(0 0 0 / 25%);
+    height: 2.4rem !important;
+}
+.nav-link {
+    display: block;
+    padding: .5rem 1rem;
+}
+.row {
+  
+}
+.text-xs {
+    font-size: .7rem!important;
+}
+.border-left-success {
+    border-left: 0.25rem solid #A94C9C !important;
+}
+.border-left-info {
+    border-left: 0.25rem solid #A94C9C !important;
+}
+.border-left-warning {
+    border-left: 0.25rem solid #A94C9C !important;
+}
+.progress-bar {
+    display: flex;
+    height: 1rem;
+    overflow: hidden;
+    line-height: 0;
+    font-size: 0.75rem;
+    background-color: #eaecf4;
+    border-radius: 0.35rem;
+}
+</style>
+{{/if}} {{#if ab}}
+<style>
+    @media (max-width: 400px){
+   .dropdown {
+display: none;
+   }}
+   @media (max-width: 720px){
+   #sidebarMenu{
+    width: max-content;
+   }}
+   @media (max-width: 720px){
+   .navbar-nav{
+display: none !important;
+   }}
+   @media (max-width: 400px){
+   .navbar-toggler {
+display:none;
+   }}
+   .bg-cbe  {
+    background-color: #E5C9E1!important;
+}
+
+   @media (min-width: 992px){
+.col-lg-2 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+} }
+body {
+    font-size: 0.875rem!important;
+}
+@media (min-width: 992px){
+.me-lg-center {
+    margin-right: 0!important;
+}}
+.card {
+    
+    background-color: #ffc107!important;
+    background-clip: border-box;
+    border: 1px solid #e3e6f0;
+    border-radius: 0.35rem;
+}
+.suc {
+    color: #000!important;
+}
+.card-header-ez {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #000;
+    border-bottom: 1px solid #e3e6f0;
+}
+.border-left-primary {
+    border-left: 0.25rem solid #000 !important;
+}
+.text-primary-cbe {
+    color: #fff !important;
+}
+.bg-dar {
+    background-color: rgb(53, 49, 49)!important;
+}
+.navbar-brand {color: rgb(168, 160, 160)!important;}
+.bg-cbe {
+    background-color: #ffc107!important;
+}
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #000;
+}
+.sidebar .nav-link.active {
+    color: #000!important;
+}
+.sidebar .nav-link.active .hov {
+    color: #000!important;
+}
+.text-primary-cbi {
+    color: #000 !important;
+}
+.text-gray-800 {
+    color: #663366 !important;
+}
+.sidebarcbe .nav-link  {
+    font-weight: 500;
+    color: #663366;
+}
+.navbar-brand {
+  color: #ffd700!important;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem !important;
+    background-color: rgba(0, 0, 0, .25);
+    box-shadow: inset -1px 0 0 rgb(0 0 0 / 25%);
+    height: 2.4rem !important;
+}
+.nav-link {
+    display: block;
+    padding: .5rem 1rem;
+}
+.row {
+  
+}
+.text-xs {
+    font-size: .7rem!important;
+}
+.border-left-success {
+    border-left: 0.25rem solid #000 !important;
+}
+.border-left-info {
+    border-left: 0.25rem solid #000 !important;
+}
+.border-left-warning {
+    border-left: 0.25rem solid #000 !important;
+}
+.trhd {background-color: #000;}
+.progress-bar {
+    display: flex;
+    height: 1rem;
+    overflow: hidden;
+    line-height: 0;
+    font-size: 0.75rem;
+    background-color: #eaecf4;
+    border-radius: 0.35rem;
+}h7 {color: #ffc107;}
+.text-pri{color: #fff!important;}
+.cha{background-color: #000!important;}
+h2{color: #000;}
+h4{color: #000;}
+p{color: #000;}
+.dwa{color: #ffc107!important;}
+.bg-warni{background-color: #000!important;}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+   color: #ffc107!important;
+    background-color: #000!important;
+    border-color: #dee2e6 #dee2e6 #fff;
+}button#nav-home-tab {
+    background-color: #ffc107;
+    color: #000;
+}
+button#nav-profile-tab {
+    background-color: #ffc107;
+    border-color: #dee2e6 #dee2e6 #fff;
+    color: #000;
+}button#nav-contact-tab {
+    background-color: #ffc107;
+    border-color: #dee2e6 #dee2e6 #fff;
+    color: #000;
+}.send{background-color: #000!important;color:#ffc107!important;}
+.w{color: #000;}
+.form-control.is-valid{border-color: #ffc107!important;}
+h1#form_header {
+    color: #000!important;
+}
+label { color: #000;}
+input.btn.btn-primary {
+    background-color: #000;
+    color: #ffc107;
+}
+.navbar-brand {
+    padding-top: 1em!important;
+    padding-bottom: 2.5rem!important;}
+</style>
+{{/if}}
+ 
+  {{#if am}}
+ <style>
+   
+.sidebar .nav-link {
+  text-transform: uppercase!important;
+    font-weight: 500!important;
+    color: #000!important;
+    font-size: 1rem!important;
+}
+#usrn{
+  font-size: 1.2rem!important;
+  font-weight: 500!important;
+}
+
+ </style>
+ 
+ {{/if}}
+ {{#if en}}
+ <style>
+   
+.sidebar .nav-link {
+ 
+    font-weight: 500!important;
+    color: #000!important;
+    font-size: 1rem!important;
+}
+#usrn{
+  font-size: 1.3em!important;
+  font-weight: 500!important;
+}
+
+ </style>{{/if}}
+<head>
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../stylesheets/css/sb-adjmin-3.css" rel="stylesheet">
+</head>
+<header class="navbar navbar-dark sticky-top bg-dar flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">EZANA PAYMENT SERVICE</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+ 
+        <ul  class="nav col-12 col-lg-auto me-lg-center mb-2 justify-content-center mb-md-0 " style=" align-items: : center; ">
+           <li><a href="#" style="color:  #ffc107" class="nav-link px-2 link-secondary">Personal</a></li>
+          
+          <li><a href="#" style="color:  #ffc107" class="nav-link px-2 link-dark">Pricing</a></li>
+           <li><a href="../dashboard/am" style="color:  #ffc107" class="nav-link px-2 link-secondary">Forum</a></li>
+          <li><a href="../developers" style="color:  #ffc107" class="nav-link px-2 link-dark">Developers</a></li>
+           <li><a href="../blog" style="color:  #ffc107" class="nav-link px-2 link-secondary">Support</a></li>
+          
+        </ul>
+
+           
+          
+
+        <div class="dropdown text-end"style="  ">
+           <ul  class="nav col-12 col-lg-auto me-lg-center mb-2 justify-content-center mb-md-0 " style=" align-items: : center;margin-top: -.7em;font-size: 11px; ">
+           <li><a href="../rplc/ab" style="color:  #ffc107" class="nav-link px-2 link-secondary">Abysinia</a></li>
+           <li><a href="../rplc/com" style="color:  #ffc107" class="nav-link px-2 link-secondary"> CBE</a></li>
+          <li><a href="../rplc/dash" style="color:  #ffc107" class="nav-link px-2 link-dark">Dashen</a></li>
+          <li><a href="../rplc/nb" style="color:  #ffc107" class="nav-link px-2 link-dark">NIB</a></li>
+          <li><a href="../rplc/oi" style="color:  #ffc107" class="nav-link px-2 link-dark">OIB</a></li>
+          
+        </ul>
+         <div style="margin-top: -1.5rem;margin-bottom: .6rem;
+}">
+
+<a style=" 
+    float: left;
+    margin-left: 2em; margin-top: .3rem;" href="#" class="d-block link-dark text-decoration-none  dwa" id="dropdownmsg" data-bs-toggle="dropdown" aria-expanded="false">
+            <i style="font-size:1.3em; margin-right: -.67rem!important;"  alt="mdo"  class="fa fa-envelope fa text-gray-300 rounded-circle eee"></i>
+        {{#if cmg}}  <i style="color:red!important; font-size:1.3em!important;top:1.05em; margin-right: 3.9rem!important; right: 10rem!important;"  class="fa fa-fw fa-circle"><h4 style="margin-top: -1.6em;
+    font-size: .5em;
+    font-weight: 700;
+}"> {{this.cmg}} </h4></i>{{/if}} </a>
+            <div style="" class="dropdown-menu contt" aria-labelledby="messagesDropdown">
+            <h6 class="dropdown-header">New Messages:</h6>
+            <div class="dropdown-divider"></div>
+             {{#if msgn}}
+              {{#each msgn}}
+            <a class="dropdown-item" style="background-color: {{this.scp}};" href="../msg/{{this.message_id}}">
+             
+              <strong>{{this.sender_name}}</strong>
+              <span class="small float-right text-muted dtm">11:21 AM</span>
+              <div class="dropdown-message small msgm"> {{this.messages}} </div>
+            </a>{{/each}}{{/if}}
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>Account service</strong>
+              <span class="small float-right text-muted dtm">11:21 AM</span>
+              <div class="dropdown-message small msgm">Please complete your profile to get full access to our services!</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <strong>Account services</strong>
+              <span class="small float-right text-muted dtm">11:21 AM</span>
+              <div class="dropdown-message small msgm">Please complete your profile to get full access to our services!</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="../msgy">View all messages</a>
+          </div>
+          
+ <a style="
+    float: left;
+    margin-left: 2em; margin-top: .3rem;" href="#" class="d-block link-dark text-decoration-none  dwa" id="dropdownalrt" data-bs-toggle="dropdown" aria-expanded="false">
+            <i style="font-size:1.3em; margin-right: -.67rem!important;"  alt="mdo"  class="fa fa-bell fa text-gray-300 rounded-circle"></i> </a>
+            <ul class="dropdown-menu text-small alrt" aria-labelledby="dropdownalrt">
+            <li><a class="dropdown-item" href="../add-bank">Alrt 1</a></li>
+            <li><a class="dropdown-item" href="#">Account Settings</a></li>
+            <li><a class="dropdown-item" href="../logon/profile">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="../logon/logot">Sign out</a></li>
+          </ul>
+          <a style="
+    float: left;
+    margin-left: 3em;" href="#" class="d-block link-dark text-decoration-none dropdown-toggle dwa" id="dropdownUser1"  data-bs-toggle="dropdown" aria-expanded="false">
+           
+            {{#if m }}
+            <img src="http://127.0.0.1/images/profile-pic-boy.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+           {{/if}} {{#if g}}
+                        <img src="http://127.0.0.1/images/profile-pic-girl.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+{{/if}}
+            {{#if pp}}
+           <img src="{{this.ppf}}" alt="mdo" width="32" height="32" class="rounded-circle">
+
+            {{/if}}
+          </a>
+           
+           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="../add-bank">Payment methods</a></li>
+            <li><a class="dropdown-item" href="#">Account Settings</a></li>
+            <li><a class="dropdown-item" href="../logon/profile">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="../logon/logout">Sign out</a></li>
+          </ul>
+
+          
+
+ <ul style="padding-right: 2.3em!important;
+    padding-left: 1rem!important;
+    margin-top: 1.3em;" class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+     <a class="btn btn-warning btn-sm" type="submit" href="../logon/logout">Sign out</a>
+    </li>
+  </ul>
+</div>
+        
+        
+        </div>
+       
+         
+</header>
+
+
+  <div class="content-wrapper" >
+    
+      <!-- Breadcrumbs-->
+ 
+
+  
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4" style="
+    margin-bottom: -2.5rem !important; padding-top: 1em; margin-right: 0em;
+">
+            <h1 class="h3 mb-0 text-gray-800"></h1>
+            
+            <br></br>
+           {{#if print}} <button onClick="window.print()" href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-print fa-sm text-black-50">
+            print page</i></button> {{/if}}
+              {{#else}}
+            {{/else}}
+            
+          
+         
+          
+          
+          </div>
+          
+
+          <!-- Content Row -->
+       
+        
+       
+       
+
+          <div class="container-fluid" >
+             
+              {{#if err}}
+       <div class="toast fade show tst" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header" style="background-color: #000;">
+
+            <strong class="me-auto" style="color: #fff;"  >ERROR</strong>
+            <small class="text-muted" style="color:#fff!important;">11 mins ago</small>
+            <button type="button" style="background-color: #ffc107;"  class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body" style="background-color: #ffc107;color:#000;">
+           {{this.err}}
+          </div>
+         </div><br>{{/if}}
+       
+  <div class="row">
+    {{#if bz}}
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-cbe sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li style="" class="active text-xs  text-info nv" id="usrn">
+            <a class="nav-link "  aria-current="page" href="../dashboard">
+              <span data-feather="home"></span>
+             {{this.dash}}
+            </a>
+          </li>
+          <li style="font-size: 1.3em!important;"  class="text-xs  text-info nv" id="usrn">
+            <a class="nav-link " href="../send">
+              <span data-feather="file"></span>
+              {{this.sndm}}
+            </a>
+          </li>
+          <li class="text-xs  text-info nv" id="usrn">
+            <a class="nav-link" href="../orders">
+              <span data-feather="shopping-cart"></span>
+              {{this.tran}}
+            </a>
+          </li>
+          <li class="text-xs  text-info nv" id="usrn">
+            <a class="nav-link" href="../add-bank">
+              <span data-feather="users"></span>
+              {{this.withd}}
+            </a>
+          </li>
+          
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Business tools</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="text-xs  text-info nv" id="usrn">
+            <a class="nav-link" href="../user/inv">
+              <span data-feather="file-text"></span>
+              {{this.addp}}
+            </a>
+          </li>
+          <li class="text-xs  text-info nv" id="usrn">
+            <a class="nav-link" href="../user/payroll">
+              <span data-feather="file-text"></span>
+             {{this.plnk}}
+            </a>
+          </li>
+  <li class="text-xs  text-info nv" id="usrn">
+            <a class="nav-link" href="../user/created">
+              <span data-feather="file-text"></span>
+             {{this.dlnk}}
+            </a>
+          </li>
+          <li class="text-xs  text-info nv" id="usrn">
+            <a class="nav-link" href="../user/blinks">
+              <span data-feather="file-text"></span>
+              {{this.lnk}}
+            </a>
+          </li>
+         
+        <li class="text-xs  text-info nv" id="usrn">            <a class="nav-link" href="../analytic">
+              <span data-feather="file-text"></span>
+
+             
+              {{this.ana}}
+            </a>
+          </li>
+           <li  class="text-xs  text-info nv" id="usrn">
+            <a class="nav-link" href="{{this.blg}}">
+              <span data-feather="file-text"></span>
+              {{this.bbtn}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>{{/if}}
+    
+    {{#if usr}}
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-cbe sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+           <li class="text-xs  text-info nv" id="usrn">
+            <a class="nav-link active" aria-current="page" href="../home">
+              <span data-feather="home"></span>
+             {{this.dash}}
+            </a>
+          </li>
+          <li class="text-xs  text-info nv" id="usrn">
+            <a class="nav-link" href="../send">
+              <span data-feather="file"></span>
+              {{this.sndm}}
+            </a>
+          </li>
+          <li class="text-xs  text-info nv" id="usrn">
+            <a class="nav-link" href="../orders">
+              <span data-feather="shopping-cart"></span>
+             {{this.tran}}
+            </a>
+          </li>
+           <li class="text-xs  text-info nv" id="usrn">
+            <a class="nav-link" href="../add-bank">
+              <span data-feather="users"></span>
+              {{this.withd}}
+            </a>
+          </li>
+          
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Short-cuts</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          
+          <li class="text-xs  text-info nv" id="usrn">
+            <a class="nav-link" href="../user/inv">
+              <span data-feather="file-text"></span>
+              Inventory
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    {{/if}}
+{{{body}}}
+ <footer class="my-5 pt-5 text-muted text-center text-small">
+   {{#if nb}}
+    <p class="mb-1">Powered by Nib bank © 2021</p>{{/if}}
+    {{#if com}}
+    <p class="mb-1">Powered by CBE © 2021</p>{{/if}}
+    {{#if ab}}
+    <p class="mb-1">Powered by bank of abyssinia © 2021</p>{{/if}}
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="../ln/0/{{this.p}}">English</a></li>
+      <li class="list-inline-item"><a href="../ln/1/{{this.p}}">አማርኛ</a></li>
+      <li class="list-inline-item"><a href="#">Oromiffa</a></li>
+      <li class="list-inline-item"><a href="#">somali</a></li>
+      <li class="list-inline-item"><a href="#">ትግረኛ</a></li>
+    </ul>
+  </footer>
+
+
+
+<script src="../javascripts/data2.js"></script>
+ <script src="../javascripts/vendor/jquery/jquery.min.js"></script>
+    <script src="../javascripts/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <link href="../stylesheets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <script src="../javascripts/vendor/jquery-easing/jquery.easing.min.js"></script>
+ <script src="../javascripts/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../javascripts/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="../javascripts/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="../javascripts/js/sb-admin-datatables.min.js"></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="../javascripts/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+ <script src="../javascripts/js/sb-admin-2.min.js"></script>
+  <script src="../javascripts/js/demo/chart-area.js"></script>
+  <script src="../javascripts/js/demo/chart-pie-demo.js"></script>
+  <script src="../javascripts/js/demo/chart-bar-demo.js"></script>
+  </body>
+</html>

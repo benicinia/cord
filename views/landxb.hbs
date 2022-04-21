@@ -1,0 +1,113 @@
+
+{{!< usrnv1}}
+{{#if mx}}
+<script src="../javascripts/datl.js"></script>{{/if}}
+            <!-- Earnings (Monthly) Card Example -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+     
+
+     
+
+      <h2 style="margin-left: 0em; margin-top: 1em; ">Transactions</h2>
+      <div class="table-responsive" style="margin-left: 0em;">
+       
+     <form class="add_customer_form" action="/api/p2" method="POST">
+        
+
+        <div class="col-md-4">
+            
+          
+       
+            <div class=container>
+                  
+            <h1 id="form_header" style="margin-left: 0em; margin-top: 1em; ">Transfer funds</h1>
+                {{#if nm}}
+               
+                <label> 
+                     <label for="validationServerUsername" class="form-label"><h4>To :        {{this.nm}}</h4>
+                    </label>
+                   
+                </label>
+                 {{/if}}
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class=container>
+                {{#if btnd}}
+                <label><h4>Phone No : <label id="info_label">{{this.btnd.bzphn}}</h4> </label></label>
+                <input type="hidden" name="cphn" size="24" value='{{this.pnh}}' required />
+           {{/if}}
+            </div>
+        </div>
+        
+
+        <div class="col-md-4">
+            <div class='container c'>
+                {{#if btnd}}
+                <label id="info_label">Phone No : {{this.btnd.bzphn}} </label><br>
+                 <label id="info_label">Amount : {{this.btnd.amt}} Birr</label>
+                 <input type="hidden" name="bzmail"  value='{{this.btnd.bzemail}}'/>
+                  <input type="hidden" id="phon" name="lnc"  value='{{this.btnd.lnc}}'/>
+                  <input type="hidden" name="trnm"  value='{{this.btnd.nm}}'/>
+                 <input type="hidden" name="amount" value='{{this.btnd.amt}}'/>
+                 <input type="hidden" name="bzphn" value='{{this.btnd.bzphn}}'/>
+                <input type="hidden" name="itnm"  value='{{this.btnd.itnm}}'/>
+                <input type="hidden" name="prd"  value='{{this.btnd.prd}}'/>
+                <input type="hidden" name="typ"  value='{{this.btnd.typ}}'/>
+                
+
+                 {{/if}}
+                 {{#if btnm}}
+                <label id="info_label">Phone No : {{this.btnm.bzphn}} </label><br>
+                 <label id="info_label">Amount : {{this.btnm.amt}} Birr</label>
+                 <input type="hidden" name="bzmail"  value='{{this.btnm.bzemail}}'/>
+                  <input type="hidden" id="phon" name="lnc"  value='{{this.btnm.lnc}}'/>
+                  <input type="hidden" name="trnm"  value='{{this.btnm.nm}}'/>
+                 <input type="hidden" name="amount" value='{{this.btnm.amt}}'/>
+                 <input type="hidden" name="bzphn" value='{{this.btnm.bzphn}}'/>
+                 <input type="hidden" name="trid"  value='{{this.btnm.trid}}'/>
+                 <input type="hidden" name="typ"  value='{{this.btnm.typ}}'/>
+
+                 {{/if}}
+                
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div  class=container>
+                <label>Enter your PIN :</b></label><br>
+                
+                <input class="form-control is-valid" name="pin" size="24" type="password"  required />
+{{# if errp }}
+   <div class="invalid-feedback" style="display: block;" >
+      
+              <h6> {{this.errp}}</h6> 
+              </div>
+                
+             
+            {{/if}} 
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-4">
+            
+
+            <div class="container" style="margin-left: 0em; margin-top: 1em; ">
+                <input class="btn btn-primary" name="submit_val" type="submit" value="submit">
+            </div>
+<div class="container">
+                <a href="#" class="button">Forgot your pin?</a>
+            </div>
+            
+        </div>
+
+    </form>
+      </div>
+    </main>
+  </div>
+</div>
+ 

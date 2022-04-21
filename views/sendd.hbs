@@ -1,0 +1,322 @@
+
+  
+  
+
+{{!< usrnv1}}
+
+            <!-- send money content -->
+            
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+     
+
+     <link href="../styleshets/assets/css/pricing.css" rel="stylesheet">
+
+      <h2 style="margin-left: 0em; margin-top: 1em; color:green;">Donated!</h2>
+      <div class="table-responsive" style="margin-left: 0em;">
+        <div class="bd-example">
+        
+           <div class="col-md-4">
+<div class="input-group has-validation x">
+  
+             <table border=0 cellpadding=0 cellspacing=0 width=803 style='border-collapse:
+ collapse;table-layout:fixed;width:604pt'>
+ <col width=9 style='mso-width-source:userset;mso-width-alt:288;width:7pt'>
+ <col width=130 style='mso-width-source:userset;mso-width-alt:4160;width:98pt'>
+ <col width=125 style='mso-width-source:userset;mso-width-alt:4000;width:94pt'>
+ <col width=103 style='mso-width-source:userset;mso-width-alt:3296;width:77pt'>
+ <col width=181 style='mso-width-source:userset;mso-width-alt:5792;width:136pt'>
+ <col width=85 span=3 style='mso-width-source:userset;mso-width-alt:2720;
+ width:64pt'>
+ <tr height=38 style='mso-height-source:userset;height:28.5pt'>
+  <td height=38 width=9 style='height:28.5pt;width:7pt'></td>
+  {{# if btnmd}}
+  <td class=xl73 colspan=3 width=358 style='mso-ignore:colspan;width:269pt'><h1>{{this.btnmd.dnm}}</h1></td>{{/if}}
+  <td width=181 style='width:136pt'></td>
+  <td width=85 style='width:64pt'></td>
+  <td width=85 style='width:64pt'></td>
+  <td width=85 style='width:64pt'></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl100>
+    {{#if veri}}
+    <h7><span class="badge rounded-pill bg-primary">Verified<svg class="bi" style="vertical-align: -.125em!important;" width="16" height="10"><use xlink:href="#check"><svg id="check" viewBox="0 0 16 16">
+    <title>Check</title>
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+  </svg></use></svg></span></h7>{{/if}}</td>     
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl99>Phone:</td> {{#if sphn}}
+  <td class=xl81 colspan=2 style='mso-ignore:colspan'>{{this.sphn}}</td>{{/if}}
+  <td class=xl65></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl100>Address 2</td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl99>Fax:</td>
+  <td class=xl81 colspan=2 style='mso-ignore:colspan'>(413) 555-0191</td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl100>{{#if addr}}{{this.addr}}{{/if}}, ST<span style='mso-spacerun:yes'>� </span>ZIP Code</td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl99>E-mail:</td>{{#if smail}}
+  <td class=xl65 colspan=2 style='mso-ignore:colspan'>{{this.smail}}</td>{{/if}}
+  <td class=xl65></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl82></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=29 style='height:21.75pt'>
+  <td height=29 style='height:21.75pt'></td>
+  {{# if bnme}}
+  <td class=xl68>{{this.bnme}}</td>{{/if}}
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl82></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl82></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr> 
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl99>Statement #:</td>{{#if butid}}
+  <td class=xl65 colspan=2 style='mso-ignore:colspan'>{{this.butid}}</td>{{/if}}
+  <td class=xl99>Bill To:</td>{{# if mnme}}
+  <td class=xl65>{{this.mnme}}</td>{{/if}}
+  <td></td>
+  <td class=xl83></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl99>Date:</td>
+  <td class=xl84>August 18, 2020</td>
+  <td class=xl76></td>
+  <td class=xl99>Email:</td>{{#if bemail}}
+  <td class=xl65 colspan=2 style='mso-ignore:colspan'>{{this.bemail}}{{/if}}</td>
+  <td class=xl83></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl99>Transaction ID:</td>{{#if mtid}}
+  <td class=xl65>ezt/{{this.phn}}/{{this.logid}}/{{this.eztid}}/{{this.mtid}}/{{this.butid}}</td>{{/if}}
+  <td class=xl75></td>
+  <td class=xl99>Phone:</td>
+  <td class=xl81 colspan=2 style='mso-ignore:colspan'>{{#if bphn}}{{this.bphn}}{{/if}}</td>
+  <td class=xl83></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>{{#if addrb}}
+  <td class=xl65>{{this.addrb}}{{/if}}</td>
+  <td></td>
+  <td class=xl83></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65 colspan=2 style='mso-ignore:colspan'>City, ST<span
+  style='mso-spacerun:yes'>� </span>ZIP Code</td>
+  <td class=xl83></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ 
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl102 width=130 style='width:98pt;font-size:10.0pt;color:black;
+  font-weight:700;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#ECF0F4;
+  mso-pattern:#ECF0F4 none'>From</td>
+  <td class=xl102 width=125 style='width:94pt;font-size:10.0pt;color:black;
+  font-weight:700;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#ECF0F4;
+  mso-pattern:#ECF0F4 none'>Amount</td>
+  <td class=xl102 width=103 style='width:77pt;font-size:10.0pt;color:black;
+  font-weight:700;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#ECF0F4;
+  mso-pattern:#ECF0F4 none'>qantity</td>
+  <td class=xl102 width=181 style='width:136pt;font-size:10.0pt;color:black;
+  font-weight:700;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#ECF0F4;
+  mso-pattern:#ECF0F4 none'>Description</td>
+  <td class=xl102 width=85 style='width:64pt;font-size:10.0pt;color:black;
+  font-weight:700;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#ECF0F4;
+  mso-pattern:#ECF0F4 none'>Shipping</td>
+  <td class=xl102 width=85 style='width:64pt;font-size:10.0pt;color:black;
+  font-weight:700;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#ECF0F4;
+  mso-pattern:#ECF0F4 none'>Tax</td>
+  <td class=xl102 width=85 style='width:64pt;font-size:10.0pt;color:black;
+  font-weight:700;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#ECF0F4;
+  mso-pattern:#ECF0F4 none'>Total</td>
+ </tr>
+ {{#if data }}
+         {{#each data }}
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  
+  <td class=xl77 width=130 style='width:98pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'>{{ this.name }}</td>
+  <td class=xl78 width=125 style='width:94pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'>{{this.price}}</td>
+  <td class=xl78 width=103 style='width:77pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'>{{this.quant}}</td>
+  <td class=xl78 width=181 style='width:136pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'></td>
+  <td class=xl79 width=85 style='width:64pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'>{{this.price}}</td>
+  <td class=xl79 width=85 style='width:64pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'></td>
+  <td class=xl80 width=85 style='width:64pt;font-size:10.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'><span style='mso-spacerun:yes'></span>$<span
+  style='mso-spacerun:yes'>{{this.price}} </span>-<span style='mso-spacerun:yes'>
+  </span></td>
+ </tr>
+ 
+ </tr>
+ {{/each}}   {{/if}} 
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  
+  <td class=xl77 width=130 style='visibility:hidden;width:98pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'></td>
+  <td class=xl78 width=125 style='visibility:hidden;width:94pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'></td>
+  <td class=xl78 width=103 style='visibility:hidden;width:77pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'></td>
+  <td class=xl78 width=181 style='visibility:hidden;width:136pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'></td>
+  <td class=xl79 width=85 style='visibility:hidden;width:64pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'></td>
+  {{#if amt}}
+  <td class=xl79 width=85 style='width:64pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'>Final total</td>
+  <td class=xl80 width=85 style='width:64pt;font-size:10.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'><span style='mso-spacerun:yes'></span>{{this.amt}}<span
+  style='mso-spacerun:yes'>-</span><span style='mso-spacerun:yes'>birr
+  </span></td>
+ </tr>{{/if}}
+ 
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl67 colspan=4 style='mso-ignore:colspan'>Reminder: <font
+  class="font11">Please include the statement number on your check.</font></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl67 colspan=2 style='mso-ignore:colspan'>Terms: <font
+  class="font11">Balance due in 30 days.</font></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+ </tr>
+
+ <![endif]>
+</table>
+   
+  </nav>
+          </div>
+         
+
+       
+          
+          </div>
+        </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</div>

@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="btn checkout">
+    <meta name="author" content="benicinia">
+    
+    <title>Ezpay checkout</title>
+    <script src="../javascripts/jquery/jquery.min.js"></script>
+    <script src="../javascripts/handlebars/handlebars.min.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
+
+    <link href="../stylesheets/features.css" rel="stylesheet">
+<link href="../stylesheets/style2.css" rel="stylesheet">
+<link href="../stylesheets/demo.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <style>
+      body, div, dl, dt, dd, ul, ol,  h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td {
+    margin: auto;
+    padding: 0;
+}
+      .container{
+         margin-bottom: auto!important;
+         margin-top: auto!important;
+      }
+     
+      .my-5 {
+    margin-top: auto!important;
+    margin-bottom: auto!important;
+}
+      .pt-5 {
+    padding-top: 0em!important;
+}
+      .o1 {
+        display: none;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      .form-floating {
+  z-index: 2;}
+  input[type="pin" i] {
+    -webkit-text-security: disc !important;
+    padding: 1px 2px;
+}
+}
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    
+<div class="container" >
+  <main>
+    <div class="py-5 text-center " id="txx">
+      <img class="d-block mx-auto mb-4" src="../images/logo.png" alt="" width="57" height="57">
+      {{#if ab}}
+      <h2 style="color: #000;">ኢዛና የክፍያ ቅጽ</h2>
+      {{/if}}
+      {{#if com}}
+      <h2>ኢዛና የክፍያ ቅጽ</h2>
+      {{/if}}
+      <div class="row g-5" >
+      <div class="col-md-5 col-lg-4 order-md-last" >
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+         {{#if com}}
+          <span class="text-gray">Ez-tunes</span>
+          {{/if}}
+          {{#if ab}}
+          <span class="text-gray" style="color: #000;">Ez-tunes</span>
+          {{/if}}
+          {{#if qun }}
+         <input type="hidden" id='qunnt' value="{{this.qun}}">
+         
+          <span class="badge text-gray rounded-pill" style="background-color: #A94C9C;">{{this.qun}}</span>
+         
+          {{/if}}  
+        </h4>
+        <form action="http://ezpay.com/securem" method="post">
+
+  <input type="hidden" name="email" value="abenezeramdie@gmail.com">
+  <input type="hidden" name="nm" value="{{this.prnm}}">
+  <input type="hidden" name="lnc" value="{{this.opt}}">
+   <input type="hidden" name="typ" value="m">
+   <input type="hidden" name="trid" value="{{this.trid}}">
+   {{#if mm}}
+      <input type="hidden" name="mm"  value="{{this.mm}}">
+      {{/if}}
+  {{#if prc}}
+  <input type="hidden" name="prc" value="{{this.prc}}">{{/if}}
+  {{#if nopt}}
+  <input type="hidden" id="n" name="npt" value="{{this.nopt}}">{{/if}}
+  {{#if nopt}}
+  <input type="hidden" name="item_name" value="{{this.prnm}}">{{/if}}
+  {{# if dt}}
+      <input type="hidden" name="dt" class="form-control"  value=`${{dt}}`>
+      {{/if}}
+      
+  <input type="hidden" name="currency_code" value="ETB">
+
+<div class="col ">
+  
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('../images/unsplash-photo-1.jpg');">
+ 
+   
+    <body id="page">
+        <ul class="cb-slideshow" style="margin-bottom: 7em;">
+          {{#if opt}}
+          {{#each opt}}
+            <li><span>Image {{this.index}}</span><div><h6>{{this.nm}}</h6></div></li>
+            {{/each}}
+            {{/if}}
+            
+        </ul>
+        <div class="container"style="margin-top: 9em; ">
+          
+            <!-- Codrops top bar -->
+            <div class="codrops-top" >
+                
+                <span class="right">
+                    <a href="#" target="_blank"></a>
+                    <a href="#" target="_blank"></a>
+                    <a href="#">
+                        <strong></strong>
+                    </a>
+                </span>
+                <div class="clr">
+
+{{#if prnm}}
+         
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{this.prnm}}</h2>
+             {{/if}}
+            <ul style="margin-left: -5em;
+    margin-bottom: 2em;background-color: rgba(0,0,0,.8);
+    border-top: 1px solid rgba(0,0,0,.125);width: 33em;padding-left:6em;" class="d-flex list-unstyled mt-auto">
+              
+              <li class="me-auto ">
+                
+
+               {{#if com}}
+                <input id="btn"   style="height: 4em;display: flex;border: 1px solid transparent!important;margin-left: -4em;" type="image" name="submit" border="0" 
+  src="../images/dwn.png" 
+  alt="Download" >{{/if}}
+  {{#if ab}}
+                <input id="btmx"   style="height: 4em;display: flex;border: 1px solid transparent!important;margin-left: -4em;" type="image" name="submit" border="0" 
+  src="../images/dwn-ab.png" 
+  alt="Download" >{{/if}}
+           </li>
+              <li class="d-flex align-items-center me-3">
+                {{#if album}}
+                <select id="opts" onChange="update()" style="height: 2em!important;width: 6em;margin-left:0em;color: #fff;background-color:transparent;"  name="optd">
+                                    <option style="color: #000;" selected="01" id="qun"  value="01">choose track</option> 
+
+                  {{#if opt }}
+                  {{#each opt }}
+    <option style="color: #000;" value="{{this.nm}}"><h6 style="color: #fff;"  >{{this.nm}} - {{this.pr}} ETB</h6>
+    {{/each}}   {{/if}} 
+    
+  </select> {{/if}}
+  
+  <input type="hidden"  name="option_index" value="1">
+  {{#if opt }}
+         {{#each opt }}
+  <input type="hidden" name="option_select{{this.index}}" value="{{this.nm}}">
+  <input type="hidden" id="q{{this.nm}}" name="option_qn{{this.index}}" value="{{this.qn}}">
+  <input type="hidden" name="option_amount{{this.index}}" value="{{this.pr}}">
+  
+  {{#if BD}}
+  <input value="{{this.BD}}">{{/if}}
+  {{/each}}   {{/if}} 
+  
+              </li>
+              
+              <li class="d-flex align-items-center me-3 " >
+                {{#if opt }}
+                  {{#each opt }}
+              <select id='{{this.nm}}' classname="{{this.qn}}" style="display: none;height: 2em!important;width: 4em;margin-left:0em;color: #fff;background-color:transparent;" class='qunti' classname="qunti" id="qunn" name="quantity">
+                                   <option id="indx{{this.nm}}" style="color: #000;" name="{{this.nm}}-qn" selected=""  value="1">1</option>
+                                   </select>{{/each}}
+                                    {{/if}}
+                                  
+
+              </li>
+              
+              
+              <li class="d-flex align-items-center" style="margin-left: 5em;">
+                {{#if se}}
+                <small style="text-transform: lowercase!important;font-size: 1em!important;margin-left: -5em;">
+                 {{this.sec}}s             
+                  </small>{{/if}}
+                 {{#if mi}}
+                <small style="text-transform: lowercase!important;font-size: 1em!important;margin-left: -5em;">
+                 {{this.min}}m             
+                  </small>{{/if}}
+
+                   {{#if hr}}
+                <small style="text-transform: lowercase!important;font-size: 1em!important;margin-left: -5em;">
+                 {{this.hrs}}h             
+                  </small>{{/if}}
+
+                  {{#if day}}
+                <small style="text-transform: lowercase!important;font-size: 1em!important;margin-left: -5em;">
+                 {{this.days}}d             
+                  </small>{{/if}}
+                   {{#if week}}
+                <small style="text-transform: lowercase!important;font-size: 1em!important;margin-left: -5em;">
+                 {{this.weeks}}w             
+                  </small>{{/if}}
+              </li>
+            </ul>
+         
+                  
+                </div>
+                
+            </div><!--/ Codrops top bar -->
+            
+        </div>
+    </body>
+</html>
+          
+       </div>
+      </div>
+</form>
+
+
+
+
+       <ul class="list-group mb-3">
+        
+        {{#if data }}
+         {{#each data }}
+         
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0" style="color:#A94C9C ;">{{ this.name }}</h6>
+              <small class="text-muted"><div class="itemthumx" >  <img src={{ this.os0 }} style="text-align: left;
+width: 40px !important;
+height: 40px !important;
+padding: 2px;"></div></small>
+            </div>
+            <span class="text-muted">{{this.price}} br.</span>
+          </li>
+            {{/each}}   {{/if}}  
+            {{#if payn }}
+            <li class="list-group-item d-flex justify-content-between">
+            <span style="color: #A94C9C;">ጠቅላላ (ብር)</span>
+            <strong class="text-muted">{{payn.amt}} br.</strong>
+          </li> {{/if}}
+            </ul>
+ 
+        
+        
+
+      </div>
+      
+      
+    </div>
+      
+    </div>
+
+    
+  </main>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2021 Ezpay plc</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="/developers">Developers</a></li>
+      <li class="list-inline-item"><a href="/getting-started">Getting started</a></li>
+      <li class="list-inline-item"><a href="/pricing">Pricing</a></li>
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+   
+
+      <script src="form-validation.js"></script>
+  </body>
+</html>

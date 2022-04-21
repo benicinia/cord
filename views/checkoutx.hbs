@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ezpay checkout login">
+    <meta name="author" content="ezpay">
+     <link href="../stylesheets/signin.css" rel="stylesheet">
+   <title>Ezpay-checkout</title>
+
+   
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+   
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin">
+  <form action='/api/v2' method='POST'>
+
+    <img class="mb-4" src="images/logo.png" alt="" width="57" height="57">
+    <h1 class="h3 mb-3 fw-normal">Please sign in to complete transaction</h1>
+
+    <div class="form-floating">
+        
+      <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+       <label for="floatingInput">Email address</label>
+    </div>
+      {{#if btnd}}
+                
+                 <input type="hidden" name="bzmail"  value='{{this.btnd.bzemail}}'/>
+                  <input type="hidden" id="phon" name="lnc"  value='{{this.btnd.lnc}}'/>
+                  <input type="hidden" name="trnm"  value='{{this.btnd.nm}}'/>
+                 <input type="hidden" name="amount" value='{{this.btnd.amt}}'/>
+                 <input type="hidden" name="bzphn" value='{{this.btnd.bzphn}}'/>
+                <input type="hidden" name="itnm"  value='{{this.btnd.itnm}}'/>
+                <input type="hidden" name="indx"  value='{{this.btnd.indx}}'/>
+                 <input type="hidden" name="itno"  value='{{this.btnd.itno}}'/>
+                  <input type="hidden" name="prd"  value='{{this.btnd.prd}}'/>
+
+                 {{/if}}
+                 {{#if btnm}}
+                
+                 <input type="hidden" name="bzmail"  value='{{this.btnm.bzemail}}'/>
+                  <input type="hidden" id="phon" name="lnc"  value='{{this.btnm.lnc}}'/>
+                  <input type="hidden" name="trnm"  value='{{this.btnm.nm}}'/>
+                 <input type="hidden" name="amount" value='{{this.btnm.amt}}'/>
+                 <input type="hidden" name="bzphn" value='{{this.btnm.bzphn}}'/>
+                <input type="hidden" name="itnm"  value='{{this.btnm.itnm}}'/>
+                <input type="hidden" name="trid"  value='{{this.btnm.trid}}'/>
+                 <input type="hidden" name="typ"  value='{{this.btnm.typ}}'/>
+
+                 {{/if}}
+                  {{#if btnmd}}
+                  <input type="hidden" name="dnm"  value='{{this.btnmd.dnm}}'/>
+                  <input type="hidden"  name="dnid"  value='{{this.btnmd.dnid}}'/>
+                  <input type="hidden" name="pid"  value='{{this.btnmd.dnid}}'/>
+                  <input type="hidden" name="typ"  value='{{this.btnmd.ty}}'/>
+                  <input type="hidden" name="dnmt"  value='{{this.btnmd.damt}}'/>
+                  <input type="hidden" name="donm"  value='{{this.btnmd.donm}}'/>
+                  <input type="hidden" name="uuid"  value='{{this.btnmd.mm}}'/>
+                 {{/if}}
+                 
+       {{#if typ}}
+      <input type="hidden" name="typ"   value="{{this.typ}}">
+      {{/if}}
+      {{# if dt}}
+      <input type="hidden" name="dt" class="form-control"  value=`${{dt}}`>
+      {{/if}}
+      {{#if ldt}}
+      <input type="hidden" name="ldt" class="form-control"  value=`${{ldt}}`>
+      {{/if}}
+      {{#if quantity}}
+      <input type="hidden" name="quantity"  value='{{this.quantity}}'>
+      {{/if}}
+      {{#if optd}}
+      <input type="hidden" name="optd"  value='{{this.optd}}'>
+      {{/if}}
+      {{#if mm}}
+      <input type="hidden" name="mm"  value='{{this.mm}}'>
+      {{/if}}
+     
+    <div class="form-floating">
+      <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+   
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+  </form>
+</main>
+
+
+    
+  </body>
+</html>

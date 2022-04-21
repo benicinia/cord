@@ -1,0 +1,154 @@
+{{!< usrnv1}}
+
+            <!-- send money content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+     
+<style>
+	.upin :hover{
+		color: #000;
+	}
+	.upin{
+		text-decoration-line: none;
+		cursor: pointer;
+		
+	}a:hover {
+    color: #000;
+}
+</style>
+
+
+     <script src="../javajscripts/upin.js"></script>
+
+      <h2 style="margin-left: 0em; margin-top: 1em; ">Upload-image</h2>
+      
+        <div class="bd-example">
+        <nav>
+          <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Update product option image</button>
+            
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <p><strong>Upload images for all options inS a product.</strong>If a product doesnt have options you can upload the main product image and skip the options section.</p>
+            <nav>
+              <br>
+              <div class="row g-3" >
+			
+        <div class="col-md-4 mb-3">
+            <label for="validationServer00" class="form-label">Item name</label>
+			{{#if btdt}}
+       <label  class="form-control">{{this.btdt.pr_nm}}</label>
+            {{/if}}
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+		  <div class="col-md-2">
+            <label for="validationServer00" class="form-label">Item Id</label>
+			            <input type="hidden" name="nopt" class="form-control" id="nopt" value="{{this.btdt.nopt}}" placeholder="" required="">
+ <label  class="form-control">{{this.btdt.prd}}</label>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div></div>
+          <div class="row g-3" >
+                       <div class="col-sm-4">   
+              <label for="validationServer00" class="form-label">Main product image</label> 
+             <input type="file" name="imagem" class="ddpOptionName text large" id="customFile" accept='image/*'>
+			
+			<input type="submit" class="btn btn-primary btn btn-success send" value="Upload">
+       
+		  </div></div>
+          <br>
+		  <div class="row g-3 x">
+        <label for="dropdownPrice">
+                          <input class="checkbox" type="checkbox" id="optimg" name="optimg" value="0">
+                          <span class="products">Add product options image</span>
+                         
+                          <a target="_blank" class="infoLink exampleLink" href="http://ezpay.com/us/cgi-bin/webscr?cmd=_display-dropdown-price-example" onclick="PAYPAL.core.openWindow(event, {width: 560, height: 410})" pa-marked="1">Example
+                          </a></label>
+        <div class="row g-3 tt" style="display: none;">
+		  <div class="col-sm-2">
+        
+            <label for="validationServer00" class="form-label">Option name</label>
+			</div>
+			<div class="col-sm-1">
+            <label for="validationServer00" class="form-label">Price</label>
+			</div>
+      <div class="col-sm-1">
+            <label for="validationServer00" class="form-label">Quantity</label>
+			</div>
+      <div class="col-sm-2">
+            <label for="validationServer00" class="form-label">Image</label>
+			</div>
+			</div>
+			
+			</div><div class="optt" style="display: none;">
+		  {{#if opt}}
+					{{#each opt}}
+          <form  name="upin" class='prr' action="../uprim/prim" enctype="multipart/form-data" method="POST">
+		  <div class="row g-3 r{{this.index}}" >
+		  <div class="col-sm-2">
+            
+	
+				<label for="validationServer00" class="form-label">{{this.nm}}</label>
+            <input type="hidden"  class="form-control" name="opt-nm-{{this.index}}" value="{{this.nm}}" placeholder="" required="">
+			            <input type="hidden"  class="form-control" name="optindx" value="{{this.index}}" >
+
+
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div><div class="col-sm-1">
+			  
+          <label for="validationServer00" class="form-label">{{this.pr}}</label>
+            <input type="hidden"  class="form-control"name="opt-price-{{this.index}}" value="{{this.pr}}" placeholder="" required="">
+            
+			<div class="valid-feedback">
+              Looks good!
+            </div></div>
+           
+          <div class="col-sm-1">
+           <label for="validationServer00" class="form-label">{{this.qn}}</label>
+            <input type="hidden"  class="form-control" name="opt-qn-{{this.index}}" id="validationServer01" value="{{this.qn}}" placeholder="" required="">
+            <div class="valid-feedback">
+              Looks good!
+            </div></div>
+			 <div class="col-sm-2">    
+             <input type="file" name="image" class="ddpOptionName text large" id="customFile" accept='image/*'>
+			<div class="valid-feedback">
+              Looks good!
+            </div></div>
+			<div class="col-sm-2">
+				
+			<input type="submit" class="btn btn-primary btn btn-sm " value="Upload">
+       
+		  </div></div></form>{{/each}}
+					{{/if}} </div> <br>
+					<div class="row g-3 {{this.index}}" >
+						 <div class="col-sm-2">
+				 <a style="display: none;"  class="upin {{this.index}}" onclick=add() >Add another option</a>
+			 	</div></div>
+				
+					</div>
+        
+       
+           
+        </div>
+
+     
+    </main>
+  </div>
+</div>
+
+
+
+<script>
+  {{#if btdt}}
+  $(document).ready(function(){
+
+    $('.prr').append('<input type="hidden"  class="form-control" name="prid" value="{{this.btdt.prd}}" >')
+  }){{/if}}
+</script>
+

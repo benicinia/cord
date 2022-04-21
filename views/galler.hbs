@@ -1,0 +1,372 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    
+    <title>Ezpay - vendor</title>
+    <script src="../javascripts/jquery/jquery.min.js"></script>
+    <script src="../javascripts/handlebars/handlebars.min.js"></script>
+   <script src="../javascripts/datf.js"></script>
+    
+    <link href="../stylesheets/features.css" rel="stylesheet">
+<link href="../stylesheets/style2r.css" rel="stylesheet">
+<link href="../stylesheets/demo.css" rel="stylesheet">
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../stylesheets/blog.css" />
+ <link href="../stylesheets/css/sb-admin-2.css" rel="stylesheet">  <!-- charts -->
+<style>
+  .tbody{
+    display: inline-flex!important;
+    flex-wrap: wrap!important;
+}
+  .blog-pagination {
+    margin-top: 2rem!important;
+}
+  div#row {
+    height: auto;
+}
+  .psld{
+    transform: translateX(-3em);
+  }
+  .fsld{
+    transform: translateX(3em);
+  }
+  .shpng{
+    background-color: #ffc107
+  }
+  .form-label {
+    float: left;
+}
+  {{#if opt}}
+{{#each opt}}
+
+.cb-slideshow li:nth-child({{this.index}}) span {
+    background-image: url(../{{this.imgur}});
+    -webkit-animation-delay: {{this.imdx}}s;
+    -moz-animation-delay: {{this.imdx}}s;
+    -o-animation-delay: {{this.imdx}}s;
+    -ms-animation-delay: {{this.imdx}}s;
+    animation-delay: {{this.imdx}}s;
+}
+{{/each}}{{/if}}
+</style>
+
+    <style>
+      .me-auto {
+   
+    margin-bottom: 14em;
+}
+     .mb98 {
+    float: left;
+}
+      body, div, dl, dt, dd, ul, ol,  h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td {
+    margin: unset;
+    padding: 0;
+}
+      .h4{
+       margin: unset;
+      }
+     
+      .my-5 {
+    margin-top: auto!important;
+    margin-bottom: auto!important;
+}
+      .pt-5 {
+    padding-top: 1em!important;
+}
+.py-5 {
+    padding-top: unset!important;
+   
+    padding-bottom: 1rem!important; 
+}
+.row {
+    padding-right: -2em!important);
+    
+    padding-left: -2em!important);}
+   
+      .o1 {
+        display: none;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      .form-floating {
+  z-index: 2;}
+  input[type="pin" i] {
+    -webkit-text-security: disc !important;
+    padding: 1px 2px;
+}
+}
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .col-lg-89 {
+    flex: 0 0 auto;
+    width: 29.6666666667%;
+}
+ .col-lg-87 {
+    flex: 0 0 auto;
+    
+    flex-shrink: 0;
+    
+}
+@media (min-width: 768px){
+.col-md-87 {
+    flex: 0 0 auto;
+   max-width: 33.6666666667%;
+     
+}}
+.order-mtd-last {
+    order: 1!important;
+}
+@media (min-width: 576px){
+.col-sm-6 {
+    
+    padding-bottom: 0.5em;
+}
+.col-12 {
+   
+    padding-bottom: 0.5em;
+}
+.col-md-7 {
+    
+    padding-bottom: 0.5em;
+}
+.col-lg-4 {
+    
+    padding-bottom: 0.5em;
+}
+}
+.bg-ezp
+{
+  background-color: rgb(53, 49, 49)!important;
+} 
+
+.col {
+       margin-left: 0em!important;
+    margin-bottom: 0.2em!important;
+}
+
+   </style>
+
+    <script>$(document).ready( function() {
+		     $('#dataTable').dataTable( {
+		       "lengthMenu": [[12, 25, 50, -1], [10, 25, 50, "All"]]
+		      } );
+		    } );</script>
+    
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <div class="container">
+<header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <ul class="list-inline">
+      <li class="list-inline-item"><a href="../blog">English</a></li>
+      <li class="list-inline-item"><a href="../bloga">አማርኛ</a></li>
+      
+    </ul>
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" href="#" style="text-decoration: none;">SfP</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="link-secondary" href="#" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+        </a>
+        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+      <a class="p-2 link-secondary" href="#">Feet</a>
+      <a class="p-2 link-secondary" href="#">Ass</a>
+      <a class="p-2 link-secondary" href="#">D.p</a>
+      <a class="p-2 link-secondary" href="#">Design</a>
+      <a class="p-2 link-secondary" href="#">Culture</a>
+      <a class="p-2 link-secondary" href="#">Business</a>
+      <a class="p-2 link-secondary" href="#">Politics</a>
+      <a class="p-2 link-secondary" href="#">Opinion</a>
+      
+    </nav>
+    
+  </div>
+</div>
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 text-whitea rounded bg-dark"style="background-position-y: 50%;background-position-x: 80%;background-image: url('../images/gh/31526235_057_81fe.jpg');">
+  
+    <div class="col-md-6 px-0">{{#if pttl}}<h1 class="display-4 fst-italic">Cart integration</h1>{{/if}}
+      <h1 class="display-4 fst-italic">Shopping cart integration</h1>
+      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+      <p class="lead mb-0"><a href="#" class="text-whitea fw-bold">Continue reading...</a></p>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">World</strong>
+          <h3 class="mb-0">Buy links</h3>
+          <div class="mb-1 text-muted">Nov 12</div>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img class="bd-placeholder-img" width="200" height="250" src="../images/nw/68567129_032_74d4.jpg" role="img"  preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+
+        </div>
+      </div>
+    </div>
+       
+     
+      
+     </div>
+    </div>
+    
+       
+       
+  </main>
+  <div class="container px-4 py-5" id="custom-cards">
+                <h2 class="pb-2 border-bottom">Custom cards</h2>
+                
+<div class="bd-example">
+
+
+          
+           <div class="table-responsive" id="xc" style="margin-left: 0em;">
+       <table class="table table-hover table-sm " id="dataTable" width="100%" cellspacing="0" >
+
+          <thead>
+         <tr class="trhd">
+                        <th></th>
+                       
+                        
+                    </thead>
+                   
+ <tbody style="display: inline-flex!important;
+    flex-wrap: wrap!important;"> 
+        
+        
+        <div id="row" class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 sld" >
+   
+     {{#if srv}}
+        {{#each srv}}<tr>
+          
+            <td>
+           <a href="../images/gh/{{this.img}}"> <div class="col" style="width: 22em;">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="padding-bottom: 5em;background-image: url('../images/gh/{{this.img}}');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+               
+              </li>
+            </ul>
+          </div>
+        </div> </div>
+      </a> 
+          </td>
+        </tr> 
+       
+       {{/each}}</div>
+        </tbody>
+        
+        {{else}}
+            
+                <p id="none"> No results found :(</p>
+            {{/if}}
+       
+     </table>
+     
+      <!-- Area Chart -->
+            
+      </div>  
+     
+       
+        
+     
+            
+              
+         
+       
+    
+     
+      <!-- Area Chart -->
+             
+      </div>
+
+
+ 
+    </div>
+    <nav class="blog-pagination" aria-label="Pagination">
+        <a class="btn btn-outline-primary" href="#">Older</a>
+        <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+      </nav>
+    </div>
+
+<footer class="blog-footer">
+  <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
+  <ul class="list-inline">
+      <li class="list-inline-item"><a href="../ln/0/0">English</a></li>
+      <li class="list-inline-item"><a href="../ln/1/0">አማርኛ</a></li>
+      <li class="list-inline-item"><a href="#">Oromiffa</a></li>
+      <li class="list-inline-item"><a href="#">somali</a></li>
+      <li class="list-inline-item"><a href="#">ትግረኛ</a></li>
+    </ul>
+</footer>
+   
+
+   <script src="../javascripts/vendor/jquery/jquery.min.js"></script>
+    <script src="../javascripts/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <link href="../stylesheets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <script src="../javascripts/vendor/jquery-easing/jquery.easing.min.js"></script>
+ <script src="../javascripts/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../javascripts/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="../javascripts/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="../javascripts/js/sb-admin-datatables.min.js"></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../javascripts/js/sb-admin-2.min.js"></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

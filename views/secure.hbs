@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.83.1">
+    <title>Checkout example · Bootstrap v5.0</title>
+    <script src="../javascripts/jquery/jquery.min.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      .form-floating {
+  z-index: 2;}
+  input[type="pin" i] {
+    -webkit-text-security: disc !important;
+    padding: 1px 2px;
+}
+}
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    
+<div class="container" >
+  <main>
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="images/logo.png" alt="" width="57" height="57">
+      <h2>ኢዛና የክፍያ ቅጽ</h2>
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 " style=" align-items: : center; ">
+           <li><a href="#" style="color:  #ffc107" class="nav-link px-2 link-secondary">English</a></li>
+           <li><a href="../dashboard/am" style="color:  #ffc107" class="nav-link px-2 link-secondary">አማርኛ</a></li>
+          <li><a href="#" style="color:  #ffc107" class="nav-link px-2 link-dark">Oromiffa</a></li>
+          <li><a href="#" style="color:  #ffc107" class="nav-link px-2 link-dark">Somali</a></li>
+          <li><a href="#" style="color:  #ffc107" class="nav-link px-2 link-dark">ትግረኛ</a></li>
+        </ul>
+      <p class="lead">Fill the form details below before continuing to pay . You must complete the form before submitting it & also remeber to recheck details before procedding to signing in.</p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+         
+          <span class="text-gray">በዘምቢል ወስጥ ያሉ</span>
+          {{#if payn }}
+         
+         
+          <span class="badge text-gray rounded-pill" style="background-color: #A94C9C;">{{payn.itno}}</span>
+         
+          {{/if}}  
+        </h4>
+
+       <ul class="list-group mb-3">
+        {{#if data }}
+         {{#each data }}
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0" style="color:#A94C9C ;">{{ this.name }}</h6>
+              <small class="text-muted"><div class="itemthumx" >  <img src={{ this.os0 }} style="text-align: left;
+width: 40px !important;
+height: 40px !important;
+padding: 2px;"></div></small>
+            </div>
+            <span class="text-muted">{{this.price}} br.</span>
+          </li>
+            {{/each}}   {{/if}}  
+            {{#if payn }}
+            <li class="list-group-item d-flex justify-content-between">
+            <span style="color: #A94C9C;">ጠቅላላ (ብር)</span>
+            <strong class="text-muted">{{payn.amt}} br.</strong>
+          </li> {{/if}}
+            </ul>
+ 
+        
+        
+
+      </div>
+      
+      <div class="col-md-7 col-lg-8">
+        <div class="table-responsive" style="overflow-x: hidden;" >
+        <div class="bd-example">
+        <nav>
+          <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">ኢዛና</button>
+            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">ዴቢት ካርድ</button>
+            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">ሞባይል ባንኪንግ</button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <p><strong>በኢዛና አካውነትዎ ለመክፈል ከታች ያለውን ፎርም ይሙሉ ፡፡</strong>You can use ኢዛና with bank cards, mobile banking, and many more coming soon <code>.ኢዛና</code>-powered payments.</p>
+            <h4 class="mb-3">የመቀበያ አድራሻ</h4>
+
+        <form class="needs-validation" novalidate action="checkout" method="post">
+          
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">ስም</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              {{# if dt}}
+               <input type="hidden" class="form-control" name="dt"  value=`${{dt}}`>
+               {{/if}}
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">የአባት ስም</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="username" class="form-label">Username</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" id="username" placeholder="Username" required>
+              <div class="invalid-feedback">
+                  Your username is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <div class="invalid-feedback">
+                Please enter a valid email address for shipping updates.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Address</label>
+              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+            </div>
+
+            <div class="col-md-5">
+              <label for="country" class="form-label">Country</label>
+              <select class="form-select" id="country" required>
+                <option value="">Choose...</option>
+                <option>United States</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid country.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="state" class="form-label">State</label>
+              <select class="form-select" id="state" required>
+                <option value="">Choose...</option>
+                <option>Addis Abeba</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="zip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+                Zip code required.
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="same-address">
+            <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info">
+            <label class="form-check-label" for="save-info">Save this information for next time</label>
+          </div>
+
+          <hr class="my-4">
+
+          <h4 class="mb-3">Payment</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+              <label class="form-check-label" for="paypal">Ezpay</label>
+            </div>
+            
+            <div class="form-check">
+              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" disabled>
+              <label class="form-check-label" for="debit">Local Debit card</label>
+            </div>
+            <div class="form-check">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" disabled>
+              <label class="form-check-label" for="credit">Credit card</label>
+
+            </div>
+          </div>
+
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <label for="cc-name" class="form-label">Name on card</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required>
+              <small class="text-muted">Full name as displayed on card</small>
+              <div class="invalid-feedback">
+                Name on card is required
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="cc-number" class="form-label">Credit card number</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required>
+              <div class="invalid-feedback">
+                Credit card number is required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Expiration</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+              <div class="invalid-feedback">
+                Expiration date required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+              <div class="invalid-feedback">
+                Security code required
+              </div>
+            </div>
+              <div class="col-md-3">
+              <label for="cc-cvv" class="form-label" id="floatingpassword">PIN</label>
+              <input type="password"  class="form-control" id="floatingPassword" placeholder="" required>
+              <div class="invalid-feedback">
+                Security PIN required
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" style="width: 5px;" type="submit">ወደ ክፍያ ገጽ</button>
+        </form>
+     
+          </div>
+         
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <p><strong>This is some placeholder content the Contact tab's associated content.</strong> Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+             
+        <nav>
+             <div class="row gy-3">
+            <div class="col-sm-6">
+              <label for="cc-name" class="form-label">Name on card</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required>
+              <small class="text-muted">Full name as displayed on card</small>
+              <div class="invalid-feedback">
+                Name on card is required
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="cc-number" class="form-label">Credit card number</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required>
+              <div class="invalid-feedback">
+                Credit card number is required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Expiration</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+              <div class="invalid-feedback">
+                Expiration date required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+              <div class="invalid-feedback">
+                Security code required
+              </div>
+            </div>
+              <div class="col-md-3">
+              <label for="cc-cvv" class="form-label" id="floatingpassword">PIN</label>
+              <input type="password"  class="form-control" id="floatingPassword" placeholder="" required>
+              
+              <div class="invalid-feedback">
+                Security PIN required
+              </div>
+            
+            </div>
+              <button class="w-100 btn btn-primary btn-lg" style="width: 5px;" type="submit">Continue to checkout</button>
+          </div>
+            
+        </nav>
+          </div>
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <p><strong>This is some placeholder content the Contact tab's associated content.</strong> Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+            
+            <nav>
+        <form class="add_customer_form" action="send_funds5" method="post">
+        <div class="flex-container-form_header">
+            <h3 style="margin-left: 0.5em; margin-top: 0em; color:#663366;">Other</h3>
+        </div>
+
+       
+           <div class="col-md-4">
+<div class="input-group has-validation">
+              
+              <input type="text" class="form-control is-valid" id="validationServerUsername" aria-describedby="inputGroupPrepend3" placeholder="user name" required="">
+               <div class="valid-feedback">
+              <br>
+            </div>
+            <button type="button" class="btn btn-primary btn btn-success ">Submit</button>
+            </div>
+          </form>
+        </nav>
+          </div>
+        </div>
+        </div>
+
+      </div>
+         </div>
+    </div>
+  </main>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2021 Ezpay plc</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="/developers">Developers</a></li>
+      <li class="list-inline-item"><a href="/getting-started">Getting started</a></li>
+      <li class="list-inline-item"><a href="/pricing">Pricing</a></li>
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="form-validation.js"></script>
+  </body>
+</html>

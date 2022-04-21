@@ -1,0 +1,388 @@
+{{!< usrnv1}}
+
+            <!-- send money content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+     
+
+
+
+      <h2 style="margin-left: 0em; margin-top: 1em; color:green;">Transaction successful!</h2>
+      <div class="table-responsive" style="margin-left: 0em;">
+        <div class="bd-example">
+           <div class="col-md-6" style="margin-left:18em;">
+              <button style="float:right; padding-right:2em; margin-left:-3em;"  onClick="window.print()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-print fa-sm text-black-50"></i> Print</button>
+</div>
+           <div class="col-md-4">
+<div class="input-group has-validation x">
+  
+             <table border=0 cellpadding=0 cellspacing=0 width=803 style='border-collapse:
+ collapse;table-layout:fixed;width:604pt'>
+ <col width=9 style='mso-width-source:userset;mso-width-alt:288;width:7pt'>
+ <col width=130 style='mso-width-source:userset;mso-width-alt:4160;width:98pt'>
+ <col width=125 style='mso-width-source:userset;mso-width-alt:4000;width:94pt'>
+ <col width=103 style='mso-width-source:userset;mso-width-alt:3296;width:77pt'>
+ <col width=181 style='mso-width-source:userset;mso-width-alt:5792;width:136pt'>
+ <col width=85 span=3 style='mso-width-source:userset;mso-width-alt:2720;
+ width:64pt'>
+ <tr height=38 style='mso-height-source:userset;height:28.5pt'>
+  <td height=38 width=9 style='height:28.5pt;width:7pt'></td>
+  {{# if snme}}
+  
+  <td class=xl73 colspan=3 width=358 style='mso-ignore:colspan;width:269pt'>{{this.snme}}</td>{{/if}}
+  <td width=181 style='width:136pt'></td>
+  <td width=85 style='width:64pt'></td>
+  <td width=85 style='width:64pt'></td>
+  <td width=85 style='width:64pt'></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl100>Street Address</td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl99>Phone:</td> {{#if snph}}
+  <td class=xl81 colspan=2 style='mso-ignore:colspan'>{{this.snph}}</td>{{/if}}
+  <td class=xl65></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl100>Address 2</td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl99>Fax:</td>
+  <td class=xl81 colspan=2 style='mso-ignore:colspan'>(413) 555-0191</td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl100>City, ST<span style='mso-spacerun:yes'>� </span>ZIP Code</td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  
+  <td class=xl99>E-mail:</td>{{#if snml}}
+  <td class=xl65 colspan=2 style='mso-ignore:colspan'>{{this.snml}}</td>{{/if}}
+  <td class=xl65></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl82></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=29 style='height:21.75pt'>
+  <td height=29 style='height:21.75pt'></td>
+  {{# if rnme}}
+  <td class=xl68>{{this.rnme}}</td>{{/if}}
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl82></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl82></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl99>Statement #:</td>{{#if stid}}
+  <td class=xl65 colspan=2 style='mso-ignore:colspan'>{{this.stid}}{{this.rtid}}</td>{{/if}}
+  <td class=xl99>Phone:</td>{{# if rphn}}
+  <td class=xl65>{{this.rphn}}</td>{{/if}}
+  <td></td>
+  <td class=xl83></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl99>Date:</td>
+  <td class=xl84>August 18, 2021</td>
+  <td class=xl76></td>
+  <td class=xl99>Email :</td>{{#if rml}}
+  <td class=xl65 colspan=2 style='mso-ignore:colspan'>{{this.rml}}</td>{{/if}}
+  <td class=xl83></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl99>Customer ID:</td>
+  <td class=xl65>Enter customer ID</td>
+  <td class=xl75></td>
+  <td class=xl65></td>
+  <td class=xl65 colspan=2 style='mso-ignore:colspan'>Street Address</td>
+  <td class=xl83></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65>Address 2</td>
+  <td></td>
+  <td class=xl83></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65 colspan=2 style='mso-ignore:colspan'>City, ST<span
+  style='mso-spacerun:yes'>� </span>ZIP Code</td>
+  <td class=xl83></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl102 width=130 style='width:98pt;font-size:10.0pt;color:black;
+  font-weight:700;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#ECF0F4;
+  mso-pattern:#ECF0F4 none'>Date</td>
+  <td class=xl102 width=125 style='width:94pt;font-size:10.0pt;color:black;
+  font-weight:700;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#ECF0F4;
+  mso-pattern:#ECF0F4 none'>Type</td>
+  <td class=xl102 width=103 style='width:77pt;font-size:10.0pt;color:black;
+  font-weight:700;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#ECF0F4;
+  mso-pattern:#ECF0F4 none'>Statement #</td>
+  <td class=xl102 width=181 style='width:136pt;font-size:10.0pt;color:black;
+  font-weight:700;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#ECF0F4;
+  mso-pattern:#ECF0F4 none'>Description</td>
+  <td class=xl102 width=85 style='width:64pt;font-size:10.0pt;color:black;
+  font-weight:700;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#ECF0F4;
+  mso-pattern:#ECF0F4 none'>charge</td>
+  <td class=xl102 width=85 style='width:64pt;font-size:10.0pt;color:black;
+  font-weight:700;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#ECF0F4;
+  mso-pattern:#ECF0F4 none'>Amount</td>
+  <td class=xl102 width=85 style='width:64pt;font-size:10.0pt;color:black;
+  font-weight:700;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#ECF0F4;
+  mso-pattern:#ECF0F4 none'>Total</td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl77 width=130 style='width:98pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'>August 18, 2020</td>
+  <td class=xl78 width=125 style='width:94pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'>Remitance</td>
+  <td class=xl78 width=103 style='width:77pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'>{{this.stid}}{{this.rtid}}</td>
+  <td class=xl78 width=181 style='width:136pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'>Local transfer</td>
+  <td class=xl79 width=85 style='width:64pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'>12 ETB</td>
+  <td class=xl79 width=85 style='width:64pt;font-size:11.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'>{{this.amt}}</td>
+  <td class=xl80 width=85 style='width:64pt;font-size:10.0pt;color:black;
+  font-weight:400;text-decoration:none;text-underline-style:none;text-line-through:
+  none;font-family:"Gill Sans MT";border:.5pt solid #C5D3E0;background:#D8E2EB;
+  mso-pattern:#D8E2EB none'><span style='mso-spacerun:yes'></span>$<span
+  style='mso-spacerun:yes'>{{this.amt}} </span>-<span style='mso-spacerun:yes'>
+  </span></td>
+ </tr>
+ 
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl67 colspan=4 style='mso-ignore:colspan'>Reminder: <font
+  class="font11">Please include the statement number on your check.</font></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl67 colspan=2 style='mso-ignore:colspan'>Terms: <font
+  class="font11">Balance due in 30 days.</font></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl85>REMITTANCE</td>
+  <td class=xl86>&nbsp;</td>
+  <td class=xl86>&nbsp;</td>
+  <td class=xl87>&nbsp;</td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl88>Customer Name:</td>
+  <td class=xl91 colspan=2 style='mso-ignore:colspan'>Enter customer name</td>
+  <td class=xl92>&nbsp;</td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl88>Customer ID:</td>
+  <td class=xl91>Enter customer ID</td>
+  <td class=xl91>&nbsp;</td>
+  <td class=xl92>&nbsp;</td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl89 style='border-top:none'>Statement #:</td>
+  <td class=xl93 colspan=2 style='mso-ignore:colspan'>Enter statement number</td>
+  <td class=xl94 style='border-top:none'>&nbsp;</td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl89 style='border-top:none'>Date:</td>
+  <td class=xl95 style='border-top:none'>August 18, 2020</td>
+  <td class=xl95 style='border-top:none'>&nbsp;</td>
+  <td class=xl94 style='border-top:none'>&nbsp;</td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl89 style='border-top:none'>Amount Due:</td>
+  <td class=xl96 style='border-top:none'>$0.00 </td>
+  <td class=xl96 style='border-top:none'>&nbsp;</td>
+  <td class=xl94 style='border-top:none'>&nbsp;</td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr height=23 style='height:17.25pt'>
+  <td height=23 style='height:17.25pt'></td>
+  <td class=xl90 colspan=2 style='mso-ignore:colspan'>Amount Enclosed:</td>
+  <td class=xl97 style='border-top:none'>&nbsp;</td>
+  <td class=xl98 style='border-top:none'>&nbsp;</td>
+  <td class=xl65></td>
+  <td></td>
+  <td></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=9 style='width:7pt'></td>
+  <td width=130 style='width:98pt'></td>
+  <td width=125 style='width:94pt'></td>
+  <td width=103 style='width:77pt'></td>
+  <td width=181 style='width:136pt'></td>
+  <td width=85 style='width:64pt'></td>
+  <td width=85 style='width:64pt'></td>
+  <td width=85 style='width:64pt'></td>
+ </tr>
+ <![endif]>
+</table>
+   
+  </nav>
+          </div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <p><strong>This is some placeholder content the Contact tab's associated content.</strong> Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+             <nav>
+        <form class="add_customer_form" action="send_funds5" method="post">
+        <div class="flex-container-form_header">
+            <h3 style="margin-left: 0.5em; margin-top: 1em; color:#663366;">By email</h3>
+        </div>
+
+       
+           <div class="col-md-4">
+<div class="input-group has-validation">
+              
+              <input type="text" class="form-control is-valid" id="validationServerUsername" aria-describedby="inputGroupPrepend3" placeholder="email@example.com" required="">
+               <div class="valid-feedback">
+              <br>
+            </div>
+            <button type="button" class="btn btn-primary btn btn-success ">Submit</button>
+            </div>
+          </form>
+        </nav>
+          </div>
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <p><strong>This is some placeholder content the Contact tab's associated content.</strong> Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+            <nav>
+        <form class="add_customer_form" action="send_funds5" method="post">
+        <div class="flex-container-form_header">
+            <h3 style="margin-left: 0.5em; margin-top: 0em; color:#663366;">By user name</h3>
+        </div>
+
+       
+           <div class="col-md-4">
+<div class="input-group has-validation">
+              
+              <input type="text" class="form-control is-valid" id="validationServerUsername" aria-describedby="inputGroupPrepend3" placeholder="user name" required="">
+               <div class="valid-feedback">
+              <br>
+            </div>
+            <button type="button" class="btn btn-primary btn btn-success ">Submit</button>
+            </div>
+          </form>
+        </nav>
+          </div>
+        </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</div>

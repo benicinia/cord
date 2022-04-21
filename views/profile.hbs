@@ -1,0 +1,294 @@
+
+    
+{{!< usrnv1}}
+    <style>
+  .mt-5, .my-5 {
+    margin-top: -3rem !important;
+}
+</style>
+
+  <!-- Transactions content -->
+   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"><br><br>
+          <h4 style="margin-left: 0em; margin-top: -1.5em; color:#663366;">Personal information</h4>
+      
+       
+<section id="forms">
+    <div class="bd-cheatsheet container-fluid bg-body">
+
+<form class="row g-3" name="signup" action="#" method="POST">
+       
+          <div class="col-md-4">
+            <label for="validationServer00" class="form-label">First name</label>
+            {{#if daf}}
+            <input type="text" name="fname" class="form-control" id="validationServer01" value={{this.daf.first_name}} placeholder="" required>
+            {{/if}}
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationServer026" class="form-label">Middle name</label>
+            <input type="text" name="mname" class="form-control" id="validationServer076" value="" placeholder="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationServerUsername" class="form-label">Last name</label>
+            <div class="input-group has-validation">
+              {{#if daf}}
+              <input type="text" class="form-control" name="lname" id="validationServer8783" value={{this.daf.last_name}} aria-describedby="inputGroupPrepend3" required>
+             {{/if}}
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+            </div>
+          </div>
+           <div class="col-md-4">
+            <label for="validationServer02" class="form-label">Date of birth</label>
+           {{#if daf}}
+            <input type="text" name="dob" class="form-control"  id="validationServer05" value='{{{this.daf.dob}}}' >
+           
+            <div class="valid-feedback">
+             {{this.daf.dob}}
+            </div>
+            {{/if}}
+          </div>
+          
+          <div class="col-md-4">
+            <label for="validationServer02" class="form-label">Gender</label>
+            {{#if daf}}
+            <input type="text" name="gender" class="form-control" id="validationServer0769" value={{this.daf.gender}} >
+           {{/if}}
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+         
+          <div class="col-sm-6" style="width: 33.3333333333%;" id="mail">
+              <label for="firstName" class="form-label">Email</label>
+              
+              {{#if daf}}
+               <input type="text" name="mail" class="form-control is-invalid" id="validationServer06" placeholder="" value={{this.daf.email}} required>
+               {{/if}}
+             
+              <div class="invalid-feedback">
+                
+              </div>
+              
+              
+            </div>
+             
+          <div class="col-sm-6">
+              <label for="firstName" class="form-label">Phone number</label>
+              
+                {{#if daf}}
+              <input type="text" name="phno" class="form-control is-invalid"  placeholder="" value={{this.daf.phone_no}} required="">
+             {{/if}}
+              <div class="invalid-feedback">
+               
+              </div>
+               
+              
+              
+
+          </div>
+          <div class="col-12">
+              <label for="address" class="form-label">Address</label>
+              
+              {{#if daf}}
+              <input type="text" name="addr1" class="form-control is-valid" value={{this.daf.address}} placeholder="" >
+              {{/if}}
+              <div class="invalid-feedback">
+               
+              </div>
+            
+              </div>
+            <div class="col-12">
+              <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+              <input type="text" name="addr2" class="form-control" id="validationServer09" value="Apartment or suite" placeholder="Apartment or suite">
+            </div>
+            
+          <div class="col-md-6">
+            <label for="validationServer037" class="form-label">City</label>
+            {{# if errors }}
+            {{# if errors.city }}
+            <input type="text" name="city" class="form-control is-invalid"  value={{this.errors.city.val}} id="validationServer10" required>
+            
+            <div class="invalid-feedback">
+              {{this.errors.city}}
+            </div> {{/if}} {{else}}
+            <input type="text" name="city" class="form-control"  value="" id="validationServer10" required>
+            {{/if}}
+
+          </div>
+          <div class="col-md-3">
+            <label for="validationServer04" class="form-label">State</label>
+            <select class="form-select" name="state" style="
+    display: block;
+    width: 100%;
+    padding: .375rem 2.25rem .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e);
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+" id="validationServer11" required>
+              <option selected disabled value="">Choose...</option>
+              <option>Addis ababa</option>
+              <option>Amhara</option>
+              <option>oromia</option>
+
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid state.
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="validationServer085" class="form-label">Zip</label>
+            <input type="text" name="zip" class="form-control" id="validationServer12" required>
+            <div class="invalid-feedback">
+              Please provide a valid zip.
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationServer01" class="form-label">Sub city</label>
+            <input type="text" name="sbcity" class="form-control" id="validationServer071" value="" placeholder="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationServer01" class="form-label">Wereda</label>
+            <input type="text" name="wereda" class="form-control" id="validationServer891" value="" placeholder="7" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationServer02" class="form-label">Kebele</label>
+            <input type="text" name="kebele" class="form-control" id="validationServer762" value="" placeholder="6" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationServer0992" class="form-label">street No.</label>
+            <input type="text" name="stno" class="form-control" id="validationServer9962" value="" placeholder="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationServerUsername" class="form-label">Block No.</label>
+            <div class="input-group has-validation">
+              
+              <input type="text" class="form-control" name="blockno" id="validationServer08767893" value="" aria-describedby="inputGroupPrepend3" required>
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <label for="validationServerUsername" class="form-label">House No.</label>
+            <div class="input-group has-validation">
+              
+              <input type="text" class="form-control" name="houseno" id="validationServer03" value="" aria-describedby="inputGroupPrepend3" required>
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" id='unme'>
+            <label for="validationServer01" class="form-label">User name</label>
+            <input type="text" name="uname" class="form-control" id="validationServer13" value="benny" placeholder="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationServer01232" class="form-label">Password</label>
+            
+            {{# if errors }}
+              {{# if errors.password }}
+              <input type="password" name="password" class="form-control is-invalid" id="validationServer174" value="" placeholder="" required>
+                <div class="invalid-feedback">{{ this.errors.password.msg }}</div>
+               {{/if}} {{else}}
+<input type="password" name="password" class="form-control " id="validationServer114" value="" placeholder="" required>
+                {{/if}}
+               
+           
+
+            
+              
+            
+          </div>
+          <div class="col-md-4">
+            <label for="validationServer02" class="form-label"> Confirm Password</label>
+           {{# if errors }}
+              {{# if errors.password }}
+              <input type="password" name="password2" class="form-control is-invalid" id="validationServer14" value="" placeholder="" required>
+                <div class="invalid-feedback">{{ this.errors.password2.msg }}</div>
+               {{/if}} {{else}}
+<input type="password" name="password2" class="form-control " id="validationServer14" value="" placeholder="" required>
+                {{/if}}
+          </div>
+          <div class="col-md-4">
+            <label for="validationServerUsername" class="form-label">PIN</label>
+            <div class="input-group has-validation">
+              
+              <input type="password" class="form-control" name="pin" value="" id="validationServer16" aria-describedby="inputGroupPrepend3" required>
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+              
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationServerUsername" class="form-label">Confirm PIN</label>
+            <div class="input-group has-validation">
+              
+              <input type="password" class="form-control" name="pin2" value="" id="validationServer17" aria-describedby="inputGroupPrepend3" required>
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+              
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" name="toc" type="checkbox" value="" id="validationServer18" required>
+              <label class="form-check-label" for="invalidCheck3">
+                <a href="#" class="" style="text-decoration: none; color:; " >Agree to terms and conditions</a>
+              </label>
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" id='submit' type="submit">Update</button>
+          </div>
+        </form>
+         </div>
+         </section>
+     </table>
+     
+     
+     
+       </div>
+</div>
+
+    </main>
+ 
+ 

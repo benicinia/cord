@@ -1,0 +1,285 @@
+
+ {{!< usrnv1}}
+ 
+
+ {{#if am}}
+ <style>
+.text-xs{
+  font-size: 1.7em!important;
+  font-weight:400!important;
+}
+
+ </style>
+ 
+ 
+ {{/if}}
+<link href="../stylesheets/css/sb-admin.css" rel="stylesheet">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <style>
+  .mt-5, .my-5 {
+    margin-top: -6rem !important;
+}
+</style>
+{{#if ab}}
+<style>
+  .fa-circle{
+    position: absolute;
+    z-index: 0;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.7rem;
+   color: rgb(226, 132, 24)!important;
+    
+}
+.brf {
+    position: absolute;
+    z-index: 0;
+    top: 1rem!important;
+    right: 0rem!important;
+    font-size: 1.9rem;
+   color: rgb(226, 132, 24)!important;
+    
+}
+.brff {
+    position: absolute;
+    z-index: 0;
+    top: 1.1rem!important;
+    right: .17rem!important;
+    font-size: 1.7rem;
+   color: rgb(226, 132, 24)!important;
+    
+}
+.shp {
+    position: absolute;
+    z-index: 0;
+    top: 1rem!important;
+    right: 0rem!important;
+    font-size: 1.9rem;
+   color: rgb(226, 132, 24)!important;
+    
+}
+.shpp {
+    
+    z-index: 0;
+    top: 1.1rem!important;
+    right: .17rem!important;
+    font-size: 1.7rem;
+   color: rgb(226, 132, 24)!important;
+    
+}
+h7{
+  position: absolute;
+    z-index: 0;
+    top: .5rem;
+    right: .9rem;
+    font-size: 11px;
+    color: #000;
+    font-weight: 800;
+    font-family: sans-serif;
+}
+.fa-bell{
+  font-size:3.5rem ;
+}
+.fa-shopping-cart{
+  font-size:3.5rem ;
+}
+.fa-briefcase{
+  font-size:3.5rem ;
+}
+  
+  .suc {
+    color: #000!important;
+}.inff {
+    color: #000!important;
+}.war {
+    color: #000!important;
+}
+.bg-dan {
+    background-color: green!important;
+}.navbar-brand {color: #fff!important;}</style>{{/if}}
+<style>
+  
+  .my-5 {
+        margin-left: 15em;
+}</style>
+
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              
+              <div class="card border-left-primary shadow h-100 py-2">
+
+
+
+
+               <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      {{#if am}}<div class="text-xs font-weight-bold text-primary-cbi text-uppercase mb-1" style="font-weight: 400; font-size:1.7em!important"><b>ልውውጥ</b></div>{{/if}}{{#if en}}
+                      <div class="text-xst font-weight-bold text-primary-cbi text-uppercase mb-1"><b>Transaction</b></div>{{/if}}
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        {{# if bal }}
+               {{ this.bal}}  {{/if}} birr
+                       </div>
+                    </div>
+                    <div class="col-auto"><i  class="fa fa-fw fa-circle brf" style="color:#ffc107!important;
+    font-size: 2.47em!important;
+    top: .94rem!important;
+    right: -.1rem!important;"></i><i  class="fa fa-fw fa-circle brf" style=" color: #000!important;font-size:2rem!important;top: .87rem;
+    right: .83rem;"></i><i  class="fa fa-fw fa-circle brff"><h7 ><b>{{this.kin}}</b></h7></i>
+                  <a style="color: #000;" href="./orders">  <i class="fa fa-briefcase fa-2x text-gray-300"></i></a>
+                    </div>
+                   
+                  </div>
+                </div></a>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1 suc"><b>{{this.inlrt}}</b></div>
+                      {{#if kin}}
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{this.kin}} new </div>{{/if}}
+                      {{#if ki}}
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><a class="nav-link" href=''>No new alerts</a></div>{{/if}}
+                    </div>
+                    
+                      <div class="col-auto"><i  class="fa fa-fw fa-circle brf" style="color:#ffc107!important;
+    font-size: 2.47em!important;
+    top: .94rem!important;
+    right: -.1rem!important;"></i><i  class="fa fa-fw fa-circle brf" style=" color: #000!important;font-size:2rem!important;top: .87rem;
+    right: -0.01rem!important;"></i><i  class="fa fa-fw fa-circle brff"><h7 ><b>{{this.kin}}</b></h7></i>
+                  <a style="color: #000;" href="../user/invlrt">  <i style="margin-right: -.67rem!important;" class="fa fa-bell fa-2x text-gray-300"></i></a>
+                    </div>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1 inff">{{this.task}}</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                        </div>
+                        <div class="col">
+                          <div class="progress progress-sm mr-2">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-clipboard-list fa-2x text-gray-800"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1 war"><b>{{this.or}}</b></div>
+                      {{#if kino}}
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><a style="text-decoration-line:none ;color:#000;font-size:1em;" href="./orders/new">{{this.kino}}</a></div>
+                      {{#else}}
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">No new orders!</div>{{/else}}
+                      {{/if}}
+                    </div>
+                    {{#if kino}}
+                     <div class="col-auto"><i  class="fa fa-fw fa-circle brf" style="color:#ffc107!important;
+    font-size: 2.47em!important;
+    top: .94rem!important;
+    right: -.1rem!important;"></i><i  class="fa fa-fw fa-circle brf" style=" color: #000!important;font-size:2rem!important;top: .87rem;
+    right: .83rem;"></i><i  class="fa fa-fw fa-circle brff"><h7 ><b>{{this.kino}}</b></h7></i>
+                  <a style="color: #000;" href="./orders/new">  <i class="fa fa-shopping-cart fa-2x text-gray-300"></i></a>
+                    </div> {{#else}}
+                    <div class="col-auto">
+                   <i class="fa fa-shopping-cart fa-2x text-gray-300"></i> </div>
+                    {{/else}}{{/if}}
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Row -->
+
+         
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Content Column -->
+            <div class="col-lg-6 mb-4">
+
+              <!-- Project Card Example -->
+              <div class="card shadow mb-4">
+                <div class="card-header-ez py-3">
+                  <h6 class="m-0 font-weight-bold text-primary-cbe">{{this.shpk}}</h6>
+                </div>
+                <div class="card-body">
+                  <h4 class="small font-weight-bold">Account Setup <span class="float-right">20%</span></h4>
+                  <div class="progress mb-4">
+                    <div class="progress-bar bg-dan" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <h4 class="small font-weight-bold">Product setup <span class="float-right">40%</span></h4>
+                  <div class="progress mb-4">
+                    <div class="progress-bar bg-warni" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <h4 class="small font-weight-bold">Customer Database <span class="float-right">60%</span></h4>
+                  <div class="progress mb-4">
+                    <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  
+                </div>
+              </div>
+
+              
+            </div>
+
+            <div class="col-lg-6 mb-4">
+
+              <!-- Illustrations -->
+              
+
+              <!-- Approach -->
+              <div class="card shadow mb-4">
+                <div class="card-header-ez py-3">
+                  <h6 class="m-0 font-weight-bold text-primary-cbe">{{this.infb}}</h6>
+                </div>
+                <div class="card-body">
+                  <p>Ezpay makes extensive use of the web utility in order to reduce business coast and poor page performance. Custom web-stores  are used to create custom online shops and reduce the cost of running yourbusineess.</p>
+                  <p class="mb-0">Before adding your website, that is if you are familiar with web development frameworks, if not consult a web developer.</p>
+                  <p class="mb-0">Add some quality, images to promote your products  <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a constantly updated collection of beautiful images can & will boost sales!</p>
+                  <a target="_blank" rel="nofollow" href="https://undraw.co/">Check some examples &rarr;</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    
+    
+

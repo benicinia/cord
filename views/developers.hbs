@@ -1,0 +1,189 @@
+{{!< usrnv1}}
+
+
+    
+
+    
+
+    <!-- Bootstrap core CSS -->
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+        
+      }
+    </style>
+   <style>.my-5 {
+        margin-left: 48em;
+}</style>
+<script type="text/javascript">
+function copy_to_clipboard() {
+  
+  Text = document.getElementById('btncd');
+
+  /* Select the text field */
+  //Text.select();
+  Text.focus();
+  
+  //Text.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  document.execCommand('copy');
+
+  /* Alert the copied text */
+  alert('Copied the text: ' + Text.value);
+}
+</script>
+    
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      
+  <h1 style="color:#663366;">Buy Now: Sample HTML button code</h1>
+  <p class="lead">You can use  ezpay express  and cards checkout with our hosted product buttons.</p>
+<h2>A Simple Buy Now button</h2>
+  <p>Below code will display a buy now button for a single product called galaxy S7</p>
+
+  <pre style="background-color:#1e2021;width: max-content;
+    padding: 2em;margin-left: 14em;" >
+    <div class="dx-pre-meta"><button type="button" onclick="copy_to_clipboard()" class="btn btn-warning" style="float: right;margin-top: -2.66em;
+    margin-right: -1.5em;;
+    " >copy</button></div>
+    <code id="btncd" style="color: white;"  >
+&lt;form action=&quot;https://ezpay.com/secure&quot; method=&quot;post&quot;>
+
+  <!-- Identify your business so that you can collect the payments. -->
+  &lt;input type=&quot;hidden&quot; name=&quot;business&quot; value=&quot;bennyz@gmail.com&quot;>
+
+  <!-- Specify a Buy Now button. -->
+  &lt;input type="hidden" name="cmd" value=<span class="hljs-string" style="color: #02cf92;">"x-click"</span>>
+
+  <!-- Specify details about the item that buyers will purchase. -->
+  &lt;input type="hidden" name="item_name" value=<span class="hljs-string" style="color: #02cf92;">"galaxy S7"</span>>
+  &lt;input type="hidden" name="amount" value=<span class="hljs-string" style="color: #02cf92;">"5500"</span>>
+  &lt;input type="hidden" name="currency_code" value=<span class="hljs-string" style="color: #02cf92;">"ETB"</span>>
+
+  <!-- Display the payment button. -->
+  &lt;input type="image" name="submit" border="0"
+  src="http://ezpay.com/images/btn_buynow_LG.webp"
+  alt="Buy Now">
+  &lt;img alt="" border="0" width="1" height="1"
+  src="http://ezpay.com/images/btn_buynow_LG.webp" >
+
+  &lt;/form>
+
+
+</code></pre>
+<h2>A Simple Buy Now button (javascript)</h2>
+  <p>Below code will display a buy now button for a single product called galaxy S7</p>
+
+  <pre style="background-color:#1e2021;width: max-content;
+    padding: 2em;margin-left: 14em;" >
+    <div class="dx-pre-meta"><button type="button" onclick="copy_to_clipboard()" class="btn btn-warning" style="float: right;margin-top: -2.66em;
+    margin-right: -1.5em;;
+    " >copy</button></div>
+    <code id="btncd" style="color: white;"  >
+<div id="paypal-button"></div>
+&lt;script src="https://www.ezpay.com/api/checkout.js">&lt;/script>
+&lt;script
+  ezy.Button.render(
+    
+    // Set up a payment
+    payment: function(data, actions) {
+      return actions.payment.create({
+        transactions: [{
+          amount: {
+            total: '0.01',
+            currency: 'ETB'
+          }
+        }]
+      });
+    },
+    // Execute the payment
+    onAuthorize: function(data, actions) {
+      return actions.payment.execute().then(function() {
+        // Show a confirmation message to the buyer
+        window.alert('Thank you for your purchase!');
+      });
+    }
+  }, '#ezy-button');
+
+&lt;script>
+</code></pre>
+<h2>Buy Now with product options</h2>
+<p>This code sample configures a basic Buy Now button with an option menu named "Type of umbrella."</p>
+  <p>You can just paste this <code>button code</code>onto your web page below an image or a text description of the item.</p>
+
+  <pre style="background-color:#1e2021;;
+    padding: 2em;margin-left: 0em;" >
+    <div class="dx-pre-meta"><button type="button" onclick="copy_to_clipboard()" class="btn btn-warning" style="float: right;margin-top: -2.66em;
+    margin-right: -1.5em;;
+    " >copy</button></div>
+    <code id="btncd" style="color: white;"  >
+&lt;form action="http://ezpay.com/secure" method="post">
+
+  <!-- Identify your business so that you can collect the payments. -->
+  &lt;input type="hidden" name="business" value="herschelgomez@xyzzyu.com">
+
+  <!-- Specify a Buy Now button. -->
+  &lt;input type="hidden" name="cmd" value="_xclick">
+
+  <!-- Specify details about the item that buyers will purchase. -->
+  &lt;input type="hidden" name="item_name" value="Design">
+  &lt;input type="hidden" name="currency_code" value="ETB">
+
+  <!-- Provide a drop-down menu option field. -->
+  &lt;input type="hidden" name="on0" value="Type">Design<br />
+  &lt;select name="os0">
+    &lt;option value="Select a type">-- Select a type --</option>
+    &lt;option value="Standard">Striped</option>
+    &lt;option value="Collapsible">Solid</option>
+  &lt;/select> &lt;br />
+
+  <!-- Provide a drop-down menu option field with prices. -->
+  &lt;input type="hidden" name="on1" value="Design">Design <br />
+  &lt;select name="os1">
+    &lt;option value="06oz">Striped - $30.00 ETB</option>
+    &lt;option value="12oz">Solid - $25.0 ETB</option>
+    &lt;option value="36oz">Dots - $20.00 ETB</option>
+  &lt;/select> &lt;br />
+
+  <!-- Specify the price that PayPal uses for each option. -->
+  &lt;input type="hidden" name="option_index" value="1">
+  &lt;input type="hidden" name="option_select0" value="Striped">
+  &lt;input type="hidden" name="option_amount0" value="30.00">
+  &lt;input type="hidden" name="option_select1" value="Solid">
+  &lt;input type="hidden" name="option_amount1" value="25.00">
+  &lt;input type="hidden" name="option_select2" value="Dots">
+  &lt;input type="hidden" name="option_amount2" value="20.00">
+
+  <!-- Display the payment button. -->
+  &lt;input type="image" name="submit" border="0"
+    src="http://ezpay.com/images/btn_buynow_LG.webp"
+    alt="Buy Now">
+  &lt;img alt="" border="0" width="1" height="1"
+    src="http://ezpay.com/images/btn_buynow_LG.webp">
+
+&lt;/form>
+
+</code></pre>
+  <p>By adding <code>data-masonry='{"percentPosition": true }'</code> to the <code>.row</code> wrapper, we can combine the powers of Bootstrap's responsive grid and Masonry's positioning.</p>
+  
+
+ 
+
+</main>
+
+
+    

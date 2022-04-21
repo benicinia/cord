@@ -1,0 +1,991 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    
+    <title>Ezpay - vendor</title>
+    <script src="../javascripts/jquery/jquery.min.js"></script>
+    <script src="../javascripts/handlebars/handlebars.min.js"></script>
+   <script src="../javascripts/datf.js"></script>
+   <script src="../javascripts/ezcart-idr"></script>
+    <link href="../stylesheets/features.css" rel="stylesheet">
+<link href="../stylesheets/style2r.css" rel="stylesheet">
+<link href="../stylesheets/demo.css" rel="stylesheet">
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../stylesheets/blog.css" />
+ <link href="../stylesheets/css/sb-admin-2.css" rel="stylesheet">  <!-- charts -->
+<style>
+  .ezc {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+  #shoppingCart {
+    background-color: #fff;
+    float: left;
+    color: #474747;
+    width: 263px;
+    padding: 0 10px 10px;
+    border: 1px solid #ddd;
+}
+.simpleCart_items {
+    background-color: #f4f4f4;
+    -moz-box-shadow: inset #082849 0 2px 7px;
+    font-size: 80%;
+    min-height: 120px;
+    display: block;
+    margin: 0 auto 10px;
+    overflow: hidden;
+    padding: 10px;
+    border: 1px solid #ddd;
+    word-wrap: break-word;
+    text-align: left;
+    font: normal normal 12px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+}.cartHeaders {
+    display: none;
+}.itemContainer {
+    float: left;
+    width: 210px;
+    text-align: center;
+    display: block;
+    position: relative;
+    bottom: 0;
+}.itemthumb {
+    float: left;
+    width: 58px;
+    margin: 0;}
+  .tbody{
+    display: inline-flex!important;
+    flex-wrap: wrap!important;
+}
+  .blog-pagination {
+    margin-top: 2rem!important;
+}
+  div#row {
+    height: auto;
+}
+  .psld{
+    transform: translateX(-3em);
+  }
+  .fsld{
+    transform: translateX(3em);
+  }
+  .shpng{
+    background-color: #ffc107
+  }
+  .form-label {
+    float: left;
+}
+  {{#if opt}}
+{{#each opt}}
+
+.cb-slideshow li:nth-child({{this.index}}) span {
+    background-image: url(../{{this.imgur}});
+    -webkit-animation-delay: {{this.imdx}}s;
+    -moz-animation-delay: {{this.imdx}}s;
+    -o-animation-delay: {{this.imdx}}s;
+    -ms-animation-delay: {{this.imdx}}s;
+    animation-delay: {{this.imdx}}s;
+}
+{{/each}}{{/if}}
+</style>
+
+    <style>
+      .me-auto {
+   
+    margin-bottom: 14em;
+}
+     .mb98 {
+    float: left;
+}
+      body, div, dl, dt, dd, ul, ol,  h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td {
+    margin: unset;
+    padding: 0;
+}
+      .h4{
+       margin: unset;
+      }
+     
+      .my-5 {
+    margin-top: auto!important;
+    margin-bottom: auto!important;
+}
+      .pt-5 {
+    padding-top: 1em!important;
+}
+.py-5 {
+    padding-top: unset!important;
+   
+    padding-bottom: 1rem!important; 
+}
+.row {
+    padding-right: -2em!important);
+    
+    padding-left: -2em!important);}
+   
+      .o1 {
+        display: none;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      .form-floating {
+  z-index: 2;}
+  input[type="pin" i] {
+    -webkit-text-security: disc !important;
+    padding: 1px 2px;
+}
+}
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .col-lg-89 {
+    flex: 0 0 auto;
+    width: 29.6666666667%;
+}
+ .col-lg-87 {
+    flex: 0 0 auto;
+    
+    flex-shrink: 0;
+    
+}
+@media (min-width: 768px){
+.col-md-87 {
+    flex: 0 0 auto;
+   max-width: 33.6666666667%;
+     
+}}
+.order-mtd-last {
+    order: 1!important;
+}
+@media (min-width: 576px){
+.col-sm-6 {
+    
+    padding-bottom: 0.5em;
+}
+.col-12 {
+   
+    padding-bottom: 0.5em;
+}
+.col-md-7 {
+    
+    padding-bottom: 0.5em;
+}
+.col-lg-4 {
+    
+    padding-bottom: 0.5em;
+}
+}
+.bg-ezp
+{
+  background-color: rgb(53, 49, 49)!important;
+} 
+
+.col {
+       margin-left: 0em!important;
+    margin-bottom: 0.2em!important;
+}
+
+   </style>
+
+    <script>$(document).ready( function() {
+		     $('#dataTable').dataTable( {
+		       "lengthMenu": [[12, 25, 50, -1], [10, 25, 50, "All"]]
+		      } );
+		    } );</script>
+    
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <div class="container">
+<header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <ul class="list-inline">
+      <li class="list-inline-item"><a href="../blog">English</a></li>
+      <li class="list-inline-item"><a href="../bloga">አማርኛ</a></li>
+      
+    </ul>
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" href="#" style="text-decoration: none;">SfP</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="link-secondary" href="#" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+        </a>
+        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+      <a class="p-2 link-secondary" href="#">Feet</a>
+      <a class="p-2 link-secondary" href="#">Ass</a>
+      <a class="p-2 link-secondary" href="#">D.p</a>
+      <a class="p-2 link-secondary" href="#">Design</a>
+      <a class="p-2 link-secondary" href="#">Culture</a>
+      <a class="p-2 link-secondary" href="#">Business</a>
+      <a class="p-2 link-secondary" href="#">Politics</a>
+      <a class="p-2 link-secondary" href="#">Opinion</a>
+      
+    </nav>
+    
+  </div>
+</div>
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 text-whitea rounded bg-dark"style="background-position-y: 50%;background-position-x: 80%;background-image: url('../images/gh/31526235_057_81fe.jpg');">
+  
+    <div class="col-md-6 px-0">{{#if pttl}}<h1 class="display-4 fst-italic">Cart integration</h1>{{/if}}
+      <h1 class="display-4 fst-italic">Shopping cart integration</h1>
+      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+      <p class="lead mb-0"><a href="#" class="text-whitea fw-bold">Continue reading...</a></p>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    
+  <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    
+    <title>Ezpay - vendor</title>
+    <script src="../javascripts/jquery/jquery.min.js"></script>
+    <script src="../javascripts/handlebars/handlebars.min.js"></script>
+   <script src="../javascripts/datf.js"></script>
+   <script src="../javascripts/ezcart-idr"></script>
+    <link href="../stylesheets/features.css" rel="stylesheet">
+<link href="../stylesheets/style2r.css" rel="stylesheet">
+<link href="../stylesheets/demo.css" rel="stylesheet">
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../stylesheets/blog.css" />
+ <link href="../stylesheets/css/sb-admin-2.css" rel="stylesheet">  <!-- charts -->
+<style>
+  .ezc {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+  #shoppingCart {
+    background-color: #fff;
+    float: left;
+    color: #474747;
+    width: 263px;
+    padding: 0 10px 10px;
+    border: 1px solid #ddd;
+}
+.simpleCart_items {
+    background-color: #f4f4f4;
+    -moz-box-shadow: inset #082849 0 2px 7px;
+    font-size: 80%;
+    min-height: 120px;
+    display: block;
+    margin: 0 auto 10px;
+    overflow: hidden;
+    padding: 10px;
+    border: 1px solid #ddd;
+    word-wrap: break-word;
+    text-align: left;
+    font: normal normal 12px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+}.cartHeaders {
+    display: none;
+}.itemContainer {
+    float: left;
+    width: 210px;
+    text-align: center;
+    display: block;
+    position: relative;
+    bottom: 0;
+}.itemthumb {
+    float: left;
+    width: 58px;
+    margin: 0;}
+  .tbody{
+    display: inline-flex!important;
+    flex-wrap: wrap!important;
+}
+  .blog-pagination {
+    margin-top: 2rem!important;
+}
+  div#row {
+    height: auto;
+}
+  .psld{
+    transform: translateX(-3em);
+  }
+  .fsld{
+    transform: translateX(3em);
+  }
+  .shpng{
+    background-color: #ffc107
+  }
+  .form-label {
+    float: left;
+}
+  {{#if opt}}
+{{#each opt}}
+
+.cb-slideshow li:nth-child({{this.index}}) span {
+    background-image: url(../{{this.imgur}});
+    -webkit-animation-delay: {{this.imdx}}s;
+    -moz-animation-delay: {{this.imdx}}s;
+    -o-animation-delay: {{this.imdx}}s;
+    -ms-animation-delay: {{this.imdx}}s;
+    animation-delay: {{this.imdx}}s;
+}
+{{/each}}{{/if}}
+</style>
+
+    <style>
+      .me-auto {
+   
+    margin-bottom: 14em;
+}
+     .mb98 {
+    float: left;
+}
+      body, div, dl, dt, dd, ul, ol,  h1, h2, h3, h4, h5, h6, pre, form, fieldset, textarea, p, blockquote, th, td {
+    margin: unset;
+    padding: 0;
+}
+      .h4{
+       margin: unset;
+      }
+     
+      .my-5 {
+    margin-top: auto!important;
+    margin-bottom: auto!important;
+}
+      .pt-5 {
+    padding-top: 1em!important;
+}
+.py-5 {
+    padding-top: unset!important;
+   
+    padding-bottom: 1rem!important; 
+}
+.row {
+    padding-right: -2em!important);
+    
+    padding-left: -2em!important);}
+   
+      .o1 {
+        display: none;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      .form-floating {
+  z-index: 2;}
+  input[type="pin" i] {
+    -webkit-text-security: disc !important;
+    padding: 1px 2px;
+}
+}
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .col-lg-89 {
+    flex: 0 0 auto;
+    width: 29.6666666667%;
+}
+ .col-lg-87 {
+    flex: 0 0 auto;
+    
+    flex-shrink: 0;
+    
+}
+@media (min-width: 768px){
+.col-md-87 {
+    flex: 0 0 auto;
+   max-width: 33.6666666667%;
+     
+}}
+.order-mtd-last {
+    order: 1!important;
+}
+@media (min-width: 576px){
+.col-sm-6 {
+    
+    padding-bottom: 0.5em;
+}
+.col-12 {
+   
+    padding-bottom: 0.5em;
+}
+.col-md-7 {
+    
+    padding-bottom: 0.5em;
+}
+.col-lg-4 {
+    
+    padding-bottom: 0.5em;
+}
+}
+.bg-ezp
+{
+  background-color: rgb(53, 49, 49)!important;
+} 
+
+.col {
+       margin-left: 0em!important;
+    margin-bottom: 0.2em!important;
+}
+
+   </style>
+
+    <script>$(document).ready( function() {
+		     $('#dataTable').dataTable( {
+		       "lengthMenu": [[12, 25, 50, -1], [10, 25, 50, "All"]]
+		      } );
+		    } );</script>
+    
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <div class="container">
+<header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <ul class="list-inline">
+      <li class="list-inline-item"><a href="../blog">English</a></li>
+      <li class="list-inline-item"><a href="../bloga">አማርኛ</a></li>
+      
+    </ul>
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" href="#" style="text-decoration: none;">SfP</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="link-secondary" href="#" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+        </a>
+        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+      <a class="p-2 link-secondary" href="#">Feet</a>
+      <a class="p-2 link-secondary" href="#">Ass</a>
+      <a class="p-2 link-secondary" href="#">D.p</a>
+      <a class="p-2 link-secondary" href="#">Design</a>
+      <a class="p-2 link-secondary" href="#">Culture</a>
+      <a class="p-2 link-secondary" href="#">Business</a>
+      <a class="p-2 link-secondary" href="#">Politics</a>
+      <a class="p-2 link-secondary" href="#">Opinion</a>
+      
+    </nav>
+    
+  </div>
+</div>
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 text-whitea rounded bg-dark"style="background-position-y: 50%;background-position-x: 80%;background-image: url('../images/gh/31526235_057_81fe.jpg');">
+  
+    <div class="col-md-6 px-0">{{#if pttl}}<h1 class="display-4 fst-italic">Cart integration</h1>{{/if}}
+      <h1 class="display-4 fst-italic">Shopping cart integration</h1>
+      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+      <p class="lead mb-0"><a href="#" class="text-whitea fw-bold">Continue reading...</a></p>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    
+    <div id="shoppingCart">
+<h2>Shopping Cart</h2>
+<div class="simpleCart_items">
+  <div class="cartHeaders">
+    <div class="itemName">Name</div>
+    <div class="itemthumb">thumb</div><div class="itemQuantity">Quantity</div>
+    <div class="itemTotal">Total</div><div class="itemremove">Remove</div></div>
+    </div>
+<table class="ezc"><tbody>
+<tr><td class="odd">Total Items: </td><td class="even"><span class="simpleCart_quantity">2</span></td></tr>
+<tr><td class="odd">SubTotal: </td><td class="even"><span class="simpleCart_total">$339.95</span></td></tr>
+<tr><td class="odd">Tax Cost: </td><td class="even"><span class="simpleCart_taxCost">$6.80</span></td></tr>
+<tr><td class="odd">Shipping Cost: </td><td class="even"><span class="simpleCart_shippingCost">$5.25</span></td></tr>
+<tr><td class="odd">Final Total: </td><td class="even"><span class="simpleCart_finalTotal">$352.00</span></td></tr>
+</tbody></table>
+<div class="cartbuttons">
+<a class="simpleCart_empty" href="javascript:;">Empty Cart</a>
+<a class="simpleCart_checkout" href="javascript:;">Checkout</a>
+</div>
+</div>
+       
+     
+      
+     </div>
+    </div>
+    
+       
+       
+  </main>
+  <div class="container px-4 py-5" id="custom-cards">
+       
+     
+      
+     </div>
+    </div>
+    
+       
+       
+  </main>
+  <div class="container px-4 py-5" id="custom-cards">
+                <h2 class="pb-2 border-bottom">Custom cards</h2>
+                
+<div class="bd-example">
+
+
+          
+           <div class="table-responsive" id="xc" style="margin-left: 0em;">
+       <table class="table table-hover table-sm " id="dataTable" width="100%" cellspacing="0" >
+
+          <thead>
+         <tr class="trhd">
+                        <th></th>
+                       
+                        
+                    </thead>
+                   
+ <tbody style="display: inline-flex!important;
+    flex-wrap: wrap!important;"> 
+        
+        
+        <div id="row" class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 sld" >
+   
+     {{#if sinv}}
+        {{#each sinv}}<tr>
+          
+            <td>
+           <div class="col" style="width: 22em;height: 34em;">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="padding-bottom: 5em;background-image: url('../images/gh/{{this.quant}}');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h2>
+            <ul class="d-flex list-unstyled mt-auto">
+             
+                
+              <li class="me-auto ">
+                
+
+               
+                <input id="bbtn"   style="display: flex;border: 1px solid transparent!important;margin-left: -2em;" type="image" name="submit" border="0" 
+  src="../images/btn_buynow_LG-ab.png" 
+  alt="Buy Now" >
+           </li>
+              <li class="d-flex align-items-center me-3">
+                
+                <select id="opts" onChange="update()" style="height: 2em!important;width: 6em;margin-left:0em;color: #fff;background-color:transparent;"  name="optd">
+                                    <option style="color: #000;" selected="01" id="qun"  value="01">choose</option>
+
+                  {{#if opt }}
+                  {{#each opt }}
+    <option style="color: #000;" value="{{this.nm}}"><h6 style="color: #fff;"  >{{this.nm}} - {{this.pr}} ETB</h6>
+    {{/each}}   {{/if}} 
+    
+  </select> 
+  
+  <input type="hidden"  name="option_index" value="1">
+  {{#if opt }}
+         {{#each opt }}
+  <input type="hidden" name="option_select{{this.index}}" value="{{this.nm}}">
+  <input type="hidden" id="q{{this.nm}}" name="option_qn{{this.index}}" value="{{this.qn}}">
+  <input type="hidden" name="option_amount{{this.index}}" value="{{this.pr}}">
+  
+  {{#if BD}}
+  <input value="{{this.BD}}">{{/if}}
+  {{/each}}   {{/if}} 
+  
+              </li>
+              
+              <li class="d-flex align-items-center me-3 " >
+                {{#if sinv.opt }}
+                  {{#each sinv.opt }}
+              <select id='{{this.nm}}' classname="{{this.qn}}" style="display: none;height: 2em!important;width: 4em;margin-left:0em;color: #fff;background-color:transparent;" class='qunti' classname="qunti" id="qunn" name="quantity{{this.nm}}">
+                                   <option id="indx{{this.nm}}" style="color: #000;" name="{{this.nm}}-qn" selected=""  value="1">1</option>
+                                   </select>{{/each}}
+                                    {{/if}}
+                                    
+ <small style="text-transform: lowercase!important;font-size: 1em!important;margin-left: 1em;">
+                 5w             
+                  </small>
+             
+              </li>
+            </ul>
+          </div>
+        </div> </div>
+     
+          </td>
+        </tr> 
+       
+       {{/each}}</div>
+        </tbody>
+        
+        {{else}}
+            
+                <p id="none"> No results found :(</p>
+            {{/if}}
+       
+     </table>
+     
+      <!-- Area Chart -->
+            
+      </div>  
+     
+       
+        
+     
+            
+              
+         
+       
+    
+     
+      <!-- Area Chart -->
+             
+      </div>
+
+
+ 
+    </div>
+
+   <div class="container px-4 py-5" id="custom-cards">
+                <h2 class="pb-2 border-bottom">Custom cards</h2>
+                
+<div class="bd-example">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button"  data-bs-target="col" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="col" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="col" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active carousel-item-start">
+              
+             <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('../images/unsplash-photo-1.jpg');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>Earth</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>3d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('../images/unsplash-photo-2.jpg');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>Pakistan</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>4d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('../images/unsplash-photo-3.jpg');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>California</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>5d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+              <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            
+            <div class="carousel-item carousel-item-next carousel-item-start">
+            
+             <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('../images/unsplash-photo-1.jpg');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>Earth</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>3d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('../images/unsplash-photo-2.jpg');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>Pakistan</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>4d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('../images/unsplash-photo-3.jpg');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>California</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>5d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+            
+             <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('../images/unsplash-photo-1.jpg');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>Earth</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>3d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('../images/unsplash-photo-2.jpg');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>Pakistan</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>4d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('../images/images/3.jpg');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small>California</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small>5d</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev prv" type="button" data-bs-target="col" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next nx" type="button" data-bs-target="col" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        </div> 
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2017–2021 Company Name</p>
+   <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 " style=" align-items: : center; ">
+           <li><a href="#" style="color:  #ffc107" class="nav-link px-2 link-secondary">English</a></li>
+           <li><a href="../dashboard/am" style="color:  #ffc107" class="nav-link px-2 link-secondary">አማርኛ</a></li>
+          <li><a href="#" style="color:  #ffc107" class="nav-link px-2 link-dark">Oromiffa</a></li>
+          <li><a href="#" style="color:  #ffc107" class="nav-link px-2 link-dark">Somali</a></li>
+          <li><a href="#" style="color:  #ffc107" class="nav-link px-2 link-dark">ትግረኛ</a></li>
+        </ul>
+  </footer>
+</div>
+
+ <script src="../javascripts/vendor/jquery/jquery.min.js"></script>
+    <script src="../javascripts/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <link href="../stylesheets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <script src="../javascripts/vendor/jquery-easing/jquery.easing.min.js"></script>
+ <script src="../javascripts/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../javascripts/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="../javascripts/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="../javascripts/js/sb-admin-datatables.min.js"></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../javascripts/js/sb-admin-2.min.js"></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+   
+     <script src="../javascripts/slide.js"></script>
+   
+
+      <script src="form-validation.js"></script>
+  </body>
+</html>

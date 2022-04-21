@@ -1,0 +1,95 @@
+
+    
+
+ {{!< usrnv1}}
+ 
+
+ 
+
+ 
+ <style>
+   .dwd {
+   color: #0d6efd!important;box-sizing: border-box!important;}
+   .ax {text-decoration: none;}
+   .my-5 {
+        margin-left: 15em;
+}</style>
+
+  <!-- Transactions content -->
+   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+     <br><br>
+          <h2 style="margin-left: 0em; margin-top: -1em; ">Your links</h2>
+      <div class="table-responsive" style="margin-left: 0em;">
+       <table class="table table-hover table-sm " id="dataTable" width="100%" cellspacing="0" >
+
+          <thead>
+         <tr class="trhd">
+                        <th><h7 style="color:#ffc107">Link. ID</h7></th>
+                         <th><h7 style="color:#ffc107">Product name</h7></th>
+                        <th><h7 style="color:#ffc107">Link url</h7> </th>
+                        <th><h7 style="color:#ffc107">clicked</h7> </th>
+                        <th><h7 style="color:#ffc107">Status</h7></th>
+                        <th><h7 style="color:#ffc107">qR code</h7></th>
+                        <th><h7 style="color:#ffc107">Html button</h7></th>
+                         
+                        
+                    </thead>
+                   
+
+     <tbody > 
+        
+        {{#if ldata}}
+        {{#each ldata}}
+        <tr>
+            <td>{{this.lid}} </td>
+            <td><a class="ax" href='../user/inv/{{this.pid}}'>{{this.lnm}}</a> </td>
+            <td><a class="ax" href='http://pay.ez/q/{{this.linc}}'>pay.ez/q/{{this.linc}}</a></td>
+             <td><a class="axy" href='../stats/{{this.lid}}'>Get stats</a></td>
+            <td style="color: {{this.clr}};">{{this.stt}}</td>
+
+            <td><a data-bs-toggle="modal" data-bs-target="#exampleModalCenteredScrollable{{this.lid}}" href="../user/qr/{{this.lid}}">Show</a>
+            
+            <div class="modal fade" id="exampleModalCenteredScrollable{{this.lid}}" tabindex="-1" aria-labelledby="exampleModalCenteredScrollableTitle" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <a class="dwd" href="./dwd/{{this.linc}}.png"><h5 class="modal-title" id="exampleModalCenteredScrollableTitle" style="color: #0d6efd!;">Download</h5></a>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="canvas" >
+        
+              <img width="75%" src="{{this.qr}} "  >
+
+           
+
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+            
+            </td>
+            
+           
+            
+           <td><a class="ax" href='../cbtn/{{this.pid}}'>Get code</a></td>
+        </tr>
+       {{/each}}
+        </tbody>
+        
+        {{else}}
+            
+                <p id="none"> No results found :(</p>
+            {{/if}}
+       
+     </table>
+     
+     
+      </div>
+       </div>
+</div>
+
+    </main>
+ 
+ 

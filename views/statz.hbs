@@ -1,0 +1,100 @@
+
+    
+
+ {{!< usrnv1}}
+ 
+
+  <link href="../stylesheets/css/sb-admin-2.css" rel="stylesheet">  <!-- charts -->
+
+ 
+ <style>
+   .dwd {
+   color: #0d6efd!important;box-sizing: border-box!important;}
+   .ax {text-decoration: none;}
+   .my-5 {
+        margin-left: 15em;
+}</style>
+
+  <!-- Transactions content -->
+   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+     <br><br>
+          <h2 style="margin-left: 0em; margin-top: -1em; ">Viewed  {{this.cc}} times </h2>
+      <div class="table-responsive" style="margin-left: 0em;">
+       <table class="table table-hover table-sm " id="dataTable" width="100%" cellspacing="0" >
+
+          <thead>
+         <tr class="trhd">
+                        <th><h7 style="color:#ffc107">Link. ID</h7></th>
+                         <th><h7 style="color:#ffc107">Url id</h7></th>
+                        <th><h7 style="color:#ffc107">Link url</h7> </th>
+                        <th><h7 style="color:#ffc107">Date</h7></th>
+                        <th><h7 style="color:#ffc107">Referer</h7> </th>
+                        
+                        <th><h7 style="color:#ffc107">qR code</h7></th>
+                        <th><h7 style="color:#ffc107">Html button</h7></th>
+                         
+                        
+                    </thead>
+                   
+
+     <tbody > 
+        
+        {{#if stv}}
+        {{#each stv}}
+        <tr>
+            <td>{{this.id}} </td>
+            <td><a class="ax" href='../user/inv/{{this.url_id}}'>{{this.url_id}}</a> </td>
+            <td><a class="ax" href='http://pay.ez/q/{{this.linc}}'>pay.ez/q/{{this.linc}}</a></td>
+            <td>{{this.clickdate}}</td>
+             <td>{{this.ip}}</td>
+            <td style="color: {{this.clr}};">{{this.stt}}</td>
+
+            
+            
+           
+            
+           <td><a class="ax" href='../cbtn/{{this.pid}}'>Get code</a></td>
+        </tr>
+       {{/each}}
+        </tbody>
+        
+        {{else}}
+            
+                <p id="none"> No results found :(</p>
+            {{/if}}
+       
+     </table>
+     
+      <!-- Area Chart -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3 cha">
+                  <h6 class="m-0 font-weight-bold text-pri">Link stats</h6>
+                </div>
+                <div class="card-body">
+                  <div class="chart-area">
+                   
+                    <canvas id="myAreast">
+                      
+
+
+
+                    </canvas>
+                    
+                    
+                  </div>
+                  <hr>
+                  This hepls you to see where you stand are going enjoy!
+                </div>
+              </div>
+      </div>
+       </div>
+</div>
+
+    </main>
+ 
+
+
+  <!-- Page level custom scripts -->
+ 
+  <script src="../javascripts/js/demo/chart-stats.js"></script>
+  

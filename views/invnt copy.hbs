@@ -1,0 +1,548 @@
+{{!< usrnv1}}
+<link media="screen" rel="stylesheet" type="text/css" href="../stylesheets/global.css"><link rel="stylesheet" type="text/css" href="../stylesheets/inv.css">
+<script type="text/javascript" src="../javascripts/pp/global.js"></script>
+<link media="print" rel="stylesheet" type="text/css" href="../stylesheets/print.css">
+            <!-- send money content -->
+     <style>.ddpOptionCurrency{
+                                        width: 53px;float: left;
+                                        }</style>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+     
+
+     
+<div class="header" style="margin-top: 1em;"><h2>Add Products</h2></div>
+     
+      
+        <div class="bd-example">
+        <nav>
+          <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Items</button>
+            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Digital/downloadable</button>
+            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Other</button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <p><strong>Add common shelf items into your inventory list.</strong> Also add quantity of each item you have in store so each time you make a successful sale we will be able to update your remaining items to avaid oversales and potential chargeback losses.</p>
+            <nav>
+        
+        <div class="flex-container-form_header q">
+           <h3 class="asd w" style="margin-left: 0.5em; margin-top: 1em; color:#663366;"></h3>
+        </div>
+       
+           <div class="col-md-4">
+<div class="input-group has-validation x">
+  <div class="table-responsive" style="margin-left: 0em;">
+       <table class="table table-striped table-sm table-bordered " id="dataTable" width="100%" cellspacing="0" >
+
+          <thead>
+         <tr style="background-color: #663366;">
+                        <th><h7 style="color:#ffc107">Prod. ID</h7></th>
+                        <th><h7 style="color:#ffc107">Prod. Img</h7></th>
+                        <th><h7 style="color:#ffc107">Prod .name </h7> </th>
+                        <th><h7 style="color:#ffc107">Quantity</h7></th>
+                        <th><h7 style="color:#ffc107">Type</h7></th>
+                         <th><h7 style="color:#ffc107">Weight</h7></th>
+                        <th><h7 style="color:#ffc107">Dimensions</h7></th>
+                        <th><h7 style="color:#ffc107">Shipping details</h7></th>
+                        <th><h7 style="color:#ffc107">price</h7></th>
+                        <th><h7 style="color:#ffc107">Options</h7></th>
+                        <th><h7 style="color:#ffc107">Button/links</h7></th>
+                        <th><h7 style="color:#ffc107">Add image</h7></th>
+                        
+                    </thead>
+                   
+
+     <tbody > 
+        
+        {{#if inv}}
+        {{#each inv}}
+        <tr>
+            <td>{{this.prd}} </td>
+            <td>{{this.prd}} </td>
+            <td>{{this.pr_nm}}</td>
+            <td>{{this.qunt}}</td>
+            <td>{{this.typ}}</td>
+            <td>{{this.wei}}</td>
+            <td>{{this.dimen}}</td>
+            <td>{{this.shpncst}}</td>
+            <td>{{this.prc}}</td>
+            <td><a href="/{{this.pr_id}}">View</a></td>
+            <td><a href="../cbtn/{{this.prd}}">create</a></td>
+            <td><a href="../uprim/{{this.prd}}">Upload</a></td>
+            
+            
+           
+        </tr>
+       {{/each}}
+        </tbody>
+        
+        {{else}}
+            
+                <p id="none"> No results found :(</p>
+            {{/if}}
+       
+     </table>
+     
+     
+      </div>
+              
+              <form style="margin-top: 1em;" method="POST" id="buttonDesignerForm" name="buttonDesignerForm" action="../user/addinv">
+              
+              
+              <input type="hidden" id="fakeSubmit" name="fakeSubmit" value="">
+              
+              <input type="hidden" id="selectedDropDown" name="selectedDropDown" value={{this.optionsLen}}>
+              
+          
+          
+          
+          <div class="layout1" style="width: fit-content;"><div id="stepOne" class="box top defaultOpen open">
+           
+            <div class="header" style="margin-top: 0em;"><h3>Update your product inventory</h3></div>
+            <div class="body" style="height: auto; opacity: 1;">
+              <div class="content"><div class="container">
+                <div class="group buttonType">
+              
+              
+              <select style="display: none;" id="buttonType" name="button_type"><option value="products" selected="">Shopping cart</option>
+              </select></div>
+            
+            <div class="products">
+              <input class="hide radio subButtonType" type="radio" id="radioAddToCartButton" checked="" name="sub_button_type" value="add_to_cart">
+              <input class="hide radio subButtonType" type="radio" id="radioBuyNowButton" name="sub_button_type" value="buy_now"></div>
+              <div class="group details"><div class="products">
+                <div class="row gy-3">
+                   <div class="col-sm-4">
+				        <label for="itemName">Item name</label>
+                <input class="form-control" maxlength="127" type="text" id="itemName" name="product_name" value="">
+                </div>
+                <div class="col-sm-4">
+                  <label for="itemID">Item ID<span class="fieldNote"> (optional) </span>
+                  <span class="autoTooltip" title="" tabindex="0">What's this?
+                    <span class="accessAid">You can assign an Item ID as a unique identifier to make tracking easier</span></span>
+                  </label>
+                  <input class="form-control" maxlength="127" type="text" id="itemID" size="9" name="product_id" value=""></div>
+                  
+               <div class="col-sm-4">
+				        <label for="itemName">Item weight</label>
+                <input class="form-control" maxlength="127" type="text" id="wei" name="weight" value=""></div>
+               <div class="col-sm-4">
+                  <label for="itemPrice">Quantity</label>
+                <input class="form-control" type="text" id="itemQuantity" size="9" name="item_Quantity" value=""></div>
+                    
+                    
+                   <div class="col-sm-4">
+                      <label for="itemPrice">Price</label>
+                <input class="form-control" type="text" id="itemPrice" size="9" name="item_price" value="">
+                </p>
+                        
+                
+                
+                </div></div>
+                
+                <div class="col-sm-4">
+                  <div class="customizeButtonSection">
+                          <div class="borderBox"><p class="heading"><strong>Product options</strong></p>
+                        <div id="customizeSection"><p id="addDropdownPrice" class="hideShow opened">
+                          <label for="dropdownPrice">
+                          <input class="checkbox" type="checkbox" id="dropdownPrice" name="dropdown_price" value="createdDropdownPrice">
+                          <span class="products">Add drop-down menu with price/option&nbsp;</span>
+                          <span class="subscriptions accessAid fadedOut">Add a dropdown menu with prices and options</span>
+                          <a target="_blank" class="infoLink exampleLink" href="http://ezpay.com/us/cgi-bin/webscr?cmd=_display-dropdown-price-example" onclick="PAYPAL.core.openWindow(event, {width: 560, height: 410})" pa-marked="1">Example
+                          </a></label></p>
+                          <div id="dropdownPriceSection" class="hideShow hide">
+                             <div class="col-sm-4">
+                            <p class="title dropdownPriceTitle">
+                             
+                              <label for="dropdownPriceTitle">
+                                <span class="products">Name of drop-down menu (ex.: "Colors," "Sizes")</span>
+                                <span class="subscriptions accessAid fadedOut">Description (For example, “Payment options”.)</span></label>
+                                <input class="form-control" maxlength="64" type="text" id="dropdownPriceTitle" name="dropdown_price_title" value="" disabled="">
+                                </p><p></div>
+                                  <label class="optionNameLbl" for=""><span class="products">Menu option name</span>
+                                  <span class="subscriptions accessAid fadedOut">Menu Name</span></label>
+                                  <label class="optionPriceLbl" for="optionPrice">
+                                    <span class="products">Price</span>
+                                    <span class="subscriptions accessAid fadedOut">Amount (<span class="currencyLabel">ETB</span>)</span></label>
+                                    <label class="optionCurrencyLbl" for="optionCurrency"><span class="products">Quantity</span>
+                                    <span class="subscriptions accessAid fadedOut">Frequency</span>
+                                    </label></p>
+                                    
+                                    <div id="optionsPriceContainer">
+                                      
+                                      <p class="optionRow">
+                                        
+                                        <input maxlength="64" type="text" class="ddpOptionName text" name="ddp_option_name_1" value="Option 1" disabled="">
+                                      <input type="text" class="ddpOptionPrice text" name="ddp_option_price_1" value="" disabled="">
+                                      <input style="" class="ddpOptionCurrency show" name="ddp_option_currency_1">
+                                      <select class="subscriptions ddpOptionFrequency accessAid fadedOut hide" name="ddp_option_frequency" disabled="">
+                                        <option value="D">Daily</option><option value="W">Weekly</option><option value="M" selected="">Monthly</option>
+                                        <option value="Y">Yearly</option></select></p>
+                                        <p class="optionRow clearfix">
+                                          <input maxlength="64" type="text" class="ddpOptionName text" name="ddp_option_name_2" value="Option 2" disabled="">
+                                          <input type="text" class="ddpOptionPrice text" name="ddp_option_price_2" value="" disabled="">
+                                      <input style="" class="ddpOptionCurrency show" name="ddp_option_currency_2">
+                                      
+                                          <select class="subscriptions ddpOptionFrequency accessAid fadedOut hide" name="ddp_option_frequency" disabled="">
+                                            <option value="D">Daily</option><option value="W">Weekly</option><option value="M" selected="">Monthly</option>
+                                            <option value="Y">Yearly</option></select></p><p class="optionRow clearfix"><input maxlength="64" type="text" class="ddpOptionName text" name="ddp_option_name_3" value="Option 3" disabled="">
+                                            <input type="text" class="ddpOptionPrice text" name="ddp_option_price_3" value="" disabled="">
+                                             <select style="display: none!important;" class="ddpOptionCurrency show" name="ddp_option_currency"><option value="ETB" selected="">ETB</option></select>
+                                              <input style="" class="ddpOptionCurrency show" name="ddp_option_currency_3">
+                                            <select class="subscriptions ddpOptionFrequency accessAid fadedOut hide" name="ddp_option_frequency" disabled=""><option value="D">Daily</option><option value="W">Weekly</option><option value="M" selected="">Monthly</option><option value="Y">Yearly</option></select></p></div><p class="moreOptionsLink"><a id="addOptionPrice" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1" class="opened">Add another option</a><a id="removeOptionPrice" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Remove option</a></p><p class="saveCancel"><input class="btn btn-primary btn-sm" type="submit" id="saveOptionPrice" name="save_option_price" value="Done" alt="Done" pa-marked="1" disabled=""><a id="cancelOptionPrice" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Cancel</a></p></div><div id="savedDropdownPriceSection" class="hideShow accessAid hide"><p><label id="savedDropdownPrice" for=""></label></p><p class="editDelete"><a id="editDropdownPrice" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1"><span class="products">Edit</span><span class="subscriptions accessAid fadedOut">Change</span></a>&nbsp;|&nbsp;<a id="deleteDropdownPrice" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1"><span class="products">Delete</span><span class="subscriptions accessAid fadedOut">Cancel</span></a></p></div>
+                                            <div class="hideShow dropdownSection accessAid hide" id="dropdownSection1"><p class="title"><label for="">Name of drop-down menu (ex.: "Colors," "Sizes")</label><input maxlength="64" type="text" class="dropdownTitle text" disabled="" name="dropdown1_title" value=""></p><p><label for="">Menu option name</label></p><div id="optionsContainer1"><p class="optionRow dropdown"><input maxlength="64" type="text" class="ddOptionName text" disabled="" name="dd1_option_name" value="Option 1"></p><p class="optionRow dropdown"><input maxlength="64" type="text" class="ddOptionName text" disabled="" name="dd1_option_name" value="Option 2"></p><p class="optionRow dropdown"><input maxlength="64" type="text" class="ddOptionName text" disabled="" name="dd1_option_name" value="Option 3"></p></div><p class="moreOptionsLink"><a class="addOption" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Add option</a></p><p class="saveCancel"><input class="saveOption primary button" type="submit" name="save_option" value="Done" alt="Done" pa-marked="1" disabled=""><a class="cancelOption" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Cancel</a></p></div><div class="hideShow accessAid savedDropdownSection hide" id="savedDropdownSection1"><p><label id="savedDropdown1" for=""></label></p><p class="editDelete"><a class="editDropdown" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Edit</a>&nbsp;|&nbsp;<a class="deleteDropdown" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Delete</a></p></div><div class="hideShow dropdownSection accessAid hide" id="dropdownSection2"><p class="title"><label for="">Name of drop-down menu (ex.: "Colors," "Sizes")</label><input maxlength="64" type="text" class="dropdownTitle text" disabled="" name="dropdown2_title" value=""></p><p><label for="">Menu option name</label></p><div id="optionsContainer2"><p class="optionRow dropdown"><input maxlength="64" type="text" class="ddOptionName text" disabled="" name="dd2_option_name" value="Option 1"></p><p class="optionRow dropdown"><input maxlength="64" type="text" class="ddOptionName text" disabled="" name="dd2_option_name" value="Option 2"></p><p class="optionRow dropdown"><input maxlength="64" type="text" class="ddOptionName text" disabled="" name="dd2_option_name" value="Option 3"></p></div><p class="moreOptionsLink"><a class="addOption" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Add option</a></p><p class="saveCancel">
+                                        <input class="saveOption primary button" type="submit" name="save_option_2" value="Done" alt="Done" pa-marked="1" disabled="">
+                                      <a class="cancelOption" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Cancel</a></p></div>
+                                      <div class="hideShow accessAid savedDropdownSection hide" id="savedDropdownSection2">
+                                        <p><label id="savedDropdown2" for=""></label></p>
+                                        <p class="editDelete">
+                                          <a class="editDropdown" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Edit</a>&nbsp;|&nbsp;<a class="deleteDropdown" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Delete
+                                          </a></p></div>
+                                          <div class="hideShow dropdownSection accessAid hide" id="dropdownSection3">
+                                            <p class="title"><label for="">Name of drop-down menu (ex.: "Colors," "Sizes")</label>
+                                            <input maxlength="64" type="text" class="dropdownTitle text" disabled="" name="dropdown3_title" value=""></p>
+                                            <p><label for="">Menu option name</label></p><div id="optionsContainer3"><p class="optionRow dropdown">
+                                              <input maxlength="64" type="text" class="ddOptionName text" disabled="" name="dd3_option_name" value="Option 1"></p>
+                                              <p class="optionRow dropdown"><input maxlength="64" type="text" class="ddOptionName text" disabled="" name="dd3_option_name" value="Option 2"></p><p class="optionRow dropdown"><input maxlength="64" type="text" class="ddOptionName text" disabled="" name="dd3_option_name" value="Option 3"></p></div><p class="moreOptionsLink"><a class="addOption" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Add option</a></p><p class="saveCancel"><input class="saveOption primary button" type="submit" name="save_option_3" value="Done" alt="Done" pa-marked="1" disabled=""><a class="cancelOption" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Cancel
+                        </a></p></div>
+                        <div class="hideShow accessAid savedDropdownSection hide" id="savedDropdownSection3"><p><label id="savedDropdown3" for=""></label></p>
+                        <p class="editDelete">
+                          <a class="editDropdown" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Edit</a>&nbsp;|&nbsp;
+                          <a class="deleteDropdown" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Delete</a></p></div>
+                          <div class="hideShow dropdownSection accessAid hide" id="dropdownSection4"><p class="title">
+                            <label for="">Name of drop-down menu (ex.: "Colors," "Sizes")</label>
+                            <input maxlength="64" type="text" class="dropdownTitle text" disabled="" name="dropdown4_title" value=""></p>
+                            <p><label for="">Menu option name</label></p><div id="optionsContainer4"><p class="optionRow dropdown">
+                              <input maxlength="64" type="text" class="ddOptionName text" disabled="" name="dd4_option_name" value="Option 1"></p>
+                              <p class="optionRow dropdown">
+                                <input maxlength="64" type="text" class="ddOptionName text" disabled="" name="dd4_option_name" value="Option 2"></p>
+                                <p class="optionRow dropdown">
+                                  <input maxlength="64" type="text" class="ddOptionName text" disabled="" name="dd4_option_name" value="Option 3"></p></div><p class="moreOptionsLink"><a class="addOption" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Add option</a></p><p class="saveCancel"><input class="saveOption primary button" type="submit" name="save_option_4" value="Done" alt="Done" pa-marked="1" disabled=""><a class="cancelOption" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Cancel</a></p></div><div class="hideShow accessAid savedDropdownSection hide" id="savedDropdownSection4"><p><label id="savedDropdown4" for=""></label></p><p class="editDelete"><a class="editDropdown" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Edit</a>&nbsp;|&nbsp;<a class="deleteDropdown" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Delete</a></p></div><p id="addNewDropdownSection" class="editDelete hideShow accessAid hide"><a id="addNewDropdown" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Add another drop-down menu</a></p>
+                                  <div class="hideShow accessAid textfieldSection hide" id="textfieldSection1"><p class="title"><label for="textfieldTitle1">Enter name of text field (up to 30 characters)</label><input maxlength="30" type="text" id="textfieldTitle1" class="text" disabled="" name="textfield1_title" value=""></p><p class="saveCancel"><input class="saveTextfield primary button" type="submit" name="save_textfield" value="Done" alt="Done" pa-marked="1"><a class="cancelTextfield" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Cancel</a></p></div><div class="hideShow accessAid savedTextfieldSection hide" id="savedTextfieldSection1"><p><label class="savedTextfield" id="savedTextfield1" for=""></label></p><p class="editDelete"><a class="editTextfield" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Edit</a>&nbsp;|&nbsp;<a class="deleteTextfield" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Delete</a></p></div><div class="hideShow accessAid textfieldSection hide" id="textfieldSection2"><p class="title"><label for="textfieldTitle2">Enter name of text field (up to 30 characters)</label><input maxlength="30" type="text" id="textfieldTitle2" class="text" disabled="" name="textfield2_title" value=""></p><p class="saveCancel"><input class="saveTextfield primary button" type="submit" name="save_textfield" value="Done" alt="Done" pa-marked="1"><a class="cancelTextfield" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Cancel</a></p></div><div class="hideShow accessAid savedTextfieldSection hide" id="savedTextfieldSection2"><p><label class="savedTextfield" id="savedTextfield2" for=""></label></p><p class="editDelete"><a class="editTextfield" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Edit</a>&nbsp;|&nbsp;<a class="deleteTextfield" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Delete</a></p></div><p id="addNewTextfieldSection" class="editDelete hideShow accessAid hide"><a id="addNewTextfield" href="http://ezpay.com/us/cgi-bin/webscr?cmd=" pa-marked="1">Add another text field</a></p>
+                                  
+                                    <div id="buttonAppSection" class="hideShow accessAid hide"><p id="addPaypalButton">
+                                      <label for="paypalButton"><input class="radio" type="radio" id="paypalButton" checked="" name="paypal_button" value="true">Ezpay button
+                                      </label></p><div id="paypalButtonSection" class="hideShow opened">
+                                        <p id="displaySmallButton"><label for="smallButton">
+                                          <input class="checkbox" type="checkbox" id="smallButton" name="small_button" value="createdSmallButton">Use smaller button
+                                          </label></p><p id="displayCcLogos" class="hideShow hide"><label for="ccLogos">
+                                            <input class="checkbox" type="checkbox" id="ccLogos" checked="" name="cc_logos" value="createdButtonWithCCLogo">
+                                            Display credit card logos</label></p><p id="buttonCountryLanguage"><label for="">Selct language for button</label>
+                                            <select id="selectCountryLanguage" name="select_country_language"><option value="en">English</option>
+                                            <option value="en_DZ">Amharic</option><option value="en_AD">Oromiffa</option><option value="en_AO">Somali</option>
+                                            <option value="en_AI">Tigri</option></select><input type="hidden" id="countryCode" name="country_code" value="US">
+                                            <input type="hidden" id="langCode" name="lang_code" value="en">
+                                            <input type="hidden" id="buttonUrl" name="button_url" value="http://ezpay.com/images/btn_buynow_LG.png">
+                                            <input type="hidden" id="popupButtonUrl" name="popup_button_url" value="">
+                                            <input type="hidden" id="flagInternational" name="flag_international" value="true" disabled="">
+                                            <input type="hidden" id="titleStr" name="title_str" value="Title">
+                                            <input type="hidden" id="optionStr" name="option_str" value="Option">
+                                            <input type="hidden" id="addOptionStr" name="add_option_str" value="Add another option"></p>
+                                            <p id="textBuyNow" class="hideShow buttonText hide"><label for="">Select button text</label>
+                                            <span class="field"><select id="buttonTextBuyNow" name="button_text" disabled="">
+                                              <option value="buy_now" selected="">Buy Now</option><option value="pay_now">Pay Now</option></select></span></p><p id="textSubscr" class="hideShow buttonText hide"><label for="">Select button text</label><span class="field"><select id="buttonTextSubscribe" name="button_text" disabled=""><option value="subscriptions" selected="">Subscribe</option><option value="buy_now">Buy Now</option></select></span></p>
+                                              </div><p id="addCustomButton"><label for="customButton"><input class="radio" type="radio" id="customButton" name="paypal_button" value="false">Use your own button image</label><span class="autoTooltip" title="" tabindex="0">What’s this?<span class="accessAid">Use custom button images that match the look of your website.</span></span></p><div id="customButtonSection" class="hideShow accessAid hide"><input type="text" id="customImageUrl" class="text" name="custom_image_url" value="http://"></div></div></div></div>
+                           
+           
+                             </div></div> </div>   </div>
+</div>
+                    
+        <input  class="btn btn-primary btn-sm" type="submit" id="createButton" name="create_button_submit" value="Create Button" pa-marked="1"> </input>                                 
+ </form>
+
+</div>
+ 
+
+<script type="text/javascript" src="../javascripts/pp/buttonDesigne.js"></script>
+
+<script type="text/javascript" src="../javascripts//pp_jscode_080706.js"></script>
+<script type="text/javascript">
+s.prop1="xpt\x2fMerchant\x2fbuttondesigner\x2fMaster";
+s.prop20="1540915400";
+s.prop35="out";
+s.prop37="External";
+s.prop40="5648e6565e1b3";
+s.prop50="en_US";
+s.prop64="f29970fd85c70";
+s.eVar31="BF\x3aExternal";
+s.eVar50="XC\x252bDPSvvN5RrK4viTfxJYdhq10Qg3P0ImWnv7GQgv7pyZj\x252f9sTBvHQ\x253d\x253d\x5f166c5b70f70";
+s.channel="External";
+s.server="BF";
+s.pageName="BF\x3aExternal";
+s.prop56="no";
+s.prop18="";
+s.prop16="";
+s.prop34="PayPalCredit:Servicing:CO:NoTransactions";
+</script>
+<script type="text/javascript"><!--
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+function scOnload(){var s_code=s.t();if(s_code)document.write(s_code);}
+if(window.addEventListener){
+window.addEventListener('load',scOnload,false);
+}else if(window.attachEvent){
+window.attachEvent('onload', scOnload);
+};
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//-->
+</script>
+
+
+
+
+
+
+
+   
+  </nav>
+          </div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            
+             <nav>
+               
+               <div class="row g-5">
+               <div class="col-md-5 col-lg-4 order-md-last">
+       
+
+      <aside class="bd-aside sticky-xl-top text-muted align-self-start mb-3 mb-xl-5 px-2">
+  <h2 class="h6 pt-4 pb-3 mb-4 border-bottom">How to's</h2>
+  <nav class="small" id="toc">
+    <ul class="list-unstyled">
+      <li class="my-2">
+        <ul class="list-styled ps-3" id="contents">
+          <li><a class="d-inline-flex align-items-center rounded" href="#typography">How to create downloadble google drive link</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#images">Images</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#tables">Tables</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#figures">Figures</a></li>
+        </ul>
+      </li>
+      <li class="my-2">
+        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#forms-collapse" aria-controls="forms-collapse">Forms</button>
+        <ul class="list-unstyled ps-3 collapse" id="forms-collapse">
+          <li><a class="d-inline-flex align-items-center rounded" href="#overview">Overview</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#disabled-forms">Disabled forms</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#sizing">Sizing</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#input-group">Input group</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#floating-labels">Floating labels</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#validation">Validation</a></li>
+        </ul>
+      </li>
+      <li class="my-2">
+        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#components-collapse" aria-controls="components-collapse">Components</button>
+        <ul class="list-unstyled ps-3 collapse" id="components-collapse">
+          <li><a class="d-inline-flex align-items-center rounded" href="#accordion">Accordion</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#alerts">Alerts</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#badge">Badge</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#breadcrumb">Breadcrumb</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#buttons">Buttons</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#button-group">Button group</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#card">Card</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#carousel">Carousel</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#dropdowns">Dropdowns</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#list-group">List group</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#modal">Modal</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#navs">Navs</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#navbar">Navbar</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#pagination">Pagination</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#popovers">Popovers</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#progress">Progress</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#scrollspy">Scrollspy</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#spinners">Spinners</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#toasts">Toasts</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#tooltips">Tooltips</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</aside>
+ 
+        
+        
+
+      </div>
+        <div class="col-md-7 col-lg-8">
+          
+        <div class="table-responsive" style="overflow-x: hidden;">
+          
+        <div class="bd-example">
+        
+        <div class="tab-content" id="nav-tabContent">
+         
+         
+          
+                <p><strong>Add digital products such as Pdf, audio files e.tc. to your product list.</strong> Use cloud services such as google drive to host your digital goods and creat downloadable links then add them to the downloadlink option.</p>
+            
+             
+        <nav>
+             
+               
+               
+         
+         <form action="../user/addm" method="POST">
+          
+        <div class="row gy-3">
+          <div class="col-sm-6">
+              <label for="cc-number" class="form-label">Title</label>
+              <input type="text" class="form-control" name="m_name" id="cc-number" placeholder="" required="">
+              <div class="invalid-feedback">
+                Credit card number is required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Price</label>
+              <input type="text" class="form-control" name="m_price" id="cc-expiration" placeholder="" required="">
+              <div class="invalid-feedback">
+                Expiration date required
+              </div>
+            </div>
+
+           
+              
+            
+              
+          </div>
+          <br>
+          
+            <div class="input-group mb-3">
+              
+                <span class="input-group-text" id="basic-addon2">Download link</span>
+          <input type="text" class="form-control" name="dwn" id="basic-url" aria-describedby="basic-addon2">
+          <div class="input-group mb-3">
+              <small class="text-muted">Link must be downloadable.</small>
+              <small class="text-muted"><a target="_blank" class="infoLink exampleLink" href="http://ezpay.com/" onclick="PAYPAL.core.openWindow(event, {width: 560, height: 410})" pa-marked="1">Example</a></small>
+           
+             </div>
+             
+            </div>
+
+            <div class="col-md-6">
+             
+           <button class="btn btn-primary btn-lg"  type="submit">Save</button> 
+       </div>
+       </form>
+        </nav>
+         
+         
+        </div>
+        </div>
+
+      </div>
+         </div>
+         </div>
+        </nav>
+          </div>
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            
+             <nav>
+        <div class="col-md-7 col-lg-8">
+          
+        <div class="table-responsive" style="overflow-x: hidden;">
+          
+        <div class="bd-example">
+        
+        <div class="tab-content" id="nav-tabContent">
+         
+         
+          
+                <p><strong>is some placeholder content the Contact tab's associated content.</strong> Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.</p>
+            
+             
+        <nav>
+             <div class="row gy-3">
+               
+            <div class="col-sm-6">
+              <label for="cc-name" class="form-label">Name on card</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+              <small class="text-muted">Full name as displayed on card</small>
+              <div class="invalid-feedback">
+                Name on card is required
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="cc-number" class="form-label">Credit card number</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+              <div class="invalid-feedback">
+                Credit card number is required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Expiration</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+              <div class="invalid-feedback">
+                Expiration date required
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+              <div class="invalid-feedback">
+                Security code required
+              </div>
+            </div>
+              <div class="col-md-3">
+              <label for="cc-cvv" class="form-label" id="floatingpassword">PIN</label>
+              <input type="password" class="form-control" id="floatingPassword" placeholder="" required="">
+              
+              <div class="invalid-feedback">
+                Security PIN required
+              </div>
+            
+            </div>
+            
+              
+          </div>
+          <br>
+          <div class="col-md-3">
+           <button class="btn btn-primary btn-md"  type="submit">Continue to checkout</button> 
+       </div>
+        </nav>
+         
+         
+        </div>
+        </div>
+
+      </div>
+         </div>
+        </nav>
+          </div>
+          </div>
+        </div>
+       
+
+      </div>
+    </main>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+
+
+
+  
+  
+  
+    
+   
+          
+          
+          
+         
+          
+          
