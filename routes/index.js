@@ -7,7 +7,6 @@ var bodyparser = require('body-parser');
 var mysql = require('mysql');
 var mysqli = require('mysqli'); 
 var db=require('../databse');
-var sdb=require('../sfpdb');
 var app = express();
 //var check = require('express-validator')(alidationResult);
 var hash = require('pbkdf2-password')()
