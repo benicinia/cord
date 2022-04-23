@@ -28,31 +28,30 @@ app.use(bodyparser.json());
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
   host            : 'remotemysql.com',
-  user            : 'hFCaQ9E3Fm',
-  password        : 'gdoMUSWzup',
-  database        : 'hFCaQ9E3Fm'
+  user            : 'E3Pwg1pVsj',
+  password        : 'pszLvjnpeM',
+  database        : 'E3Pwg1pVsj'
 });
 
 
 var pool  = mysql.createPool({
   connectionLimit : 10,
-  host            : 'remotemysql.com',
-  user            : 'hFCaQ9E3Fm',
-  password        : 'gdoMUSWzup',
-  database        : 'hFCaQ9E3Fm'
+ host            : 'remotemysql.com',
+  user            : 'E3Pwg1pVsj',
+  password        : 'pszLvjnpeM',
+  database        : 'E3Pwg1pVsj'
 });
 //Configure session middleware
 var options = {
-    host            : 'remotemysql.com',
-    port            :  3306,
-    user            : 'hFCaQ9E3Fm',
-    password        : 'gdoMUSWzup',
-    database        : 'hFCaQ9E3Fm'   //Database Name
+  host            : 'remotemysql.com',
+  user            : 'E3Pwg1pVsj',
+  password        : 'pszLvjnpeM',
+   port            :  3306,
+  database        : 'E3Pwg1pVsj'  //Database Name
 };
  
 var sessionStore = new MySQLStore(options);
-//var www = vhost('192.168.1.7');
-//app.use(www)
+
 app.use(cookieParser());
 
 
