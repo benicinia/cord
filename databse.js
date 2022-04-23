@@ -13,10 +13,10 @@ var mysql      = require('mysql');
 
 var pool  = new mysql.createPool({
   connectionLimit : 10,
-  host            : 'remotemysql.com',
-  user            : 'hFCaQ9E3Fm',
-  password        : 'gdoMUSWzup',
-  database        : 'hFCaQ9E3Fm'
+ host            : 'remotemysql.com',
+  user            : 'E3Pwg1pVsj',
+  password        : 'pszLvjnpeM',
+  database        : 'E3Pwg1pVsj'
 });
 
 
